@@ -75,6 +75,7 @@ namespace WindowsForms
             this.buttonLogin.TabIndex = 3;
             this.buttonLogin.Text = "Đăng Nhập";
             this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // panel3
             // 
@@ -141,6 +142,7 @@ namespace WindowsForms
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
