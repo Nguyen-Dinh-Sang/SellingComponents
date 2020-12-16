@@ -11,6 +11,8 @@ namespace WindowsForms.Business.Service
 
         private ProductService productService = ProductService.getInstance();
 
+        private CatalogService catalogService = CatalogService.getInstance();
+
         private static Service instance;
 
         private Service()
@@ -36,6 +38,11 @@ namespace WindowsForms.Business.Service
         public ClassifyDTO getClassifyByIdProduct(int id)
         {
             return classifyService.getClassifyByIdProduct(id);
+        }
+
+        public List<CatalogDTO> getCatalogs()
+        {
+            return catalogService.getCatalogs();
         }
 
         public void createProduct(ProductDTO product)

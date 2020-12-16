@@ -31,6 +31,7 @@ namespace WindowsForms.Presentation
             loadProduct();
             addProductBinding();
             loadClassifies();
+            loadCatalog();
         }
 
         private void loadProduct()
@@ -42,6 +43,13 @@ namespace WindowsForms.Presentation
         {
             comboBoxClassify2.DataSource = service.getClassifies();
             comboBoxClassify2.DisplayMember = "ClassifyName";
+        }
+
+        private void loadCatalog()
+        {
+            comboBoxCatalog.DataSource = service.getCatalogs();
+            comboBoxCatalog.DisplayMember = "CatalogName";
+            dataGridViewCatalog.DataSource = service.getCatalogs();
         }
 
         private void addProductBinding()
