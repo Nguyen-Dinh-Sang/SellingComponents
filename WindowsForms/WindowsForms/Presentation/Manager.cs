@@ -17,6 +17,7 @@ namespace WindowsForms.Presentation
         private ProductService productService = ProductService.getInstance();
         private Service service = Service.getInstance();
         private BindingSource bindingSourceProduct = new BindingSource();
+        private BindingSource bindingSourceCatalog = new BindingSource();
 
         public Manager(String username)
         {
@@ -28,10 +29,12 @@ namespace WindowsForms.Presentation
         private void load()
         {
             dataGridViewProduct.DataSource = bindingSourceProduct;
+            dataGridViewCatalog.DataSource = bindingSourceCatalog;
             loadProduct();
             addProductBinding();
             loadClassifies();
             loadCatalog();
+            addCatalogBinding();
         }
 
         private void loadProduct()
@@ -45,13 +48,6 @@ namespace WindowsForms.Presentation
             comboBoxClassify2.DisplayMember = "ClassifyName";
         }
 
-        private void loadCatalog()
-        {
-            comboBoxCatalog.DataSource = service.getCatalogs();
-            comboBoxCatalog.DisplayMember = "CatalogName";
-            dataGridViewCatalog.DataSource = service.getCatalogs();
-        }
-
         private void addProductBinding()
         {
             textBoxId.DataBindings.Add(new Binding("Text", dataGridViewProduct.DataSource, "Id", true, DataSourceUpdateMode.Never));
@@ -61,6 +57,21 @@ namespace WindowsForms.Presentation
             textBoxDetail.DataBindings.Add(new Binding("Text", dataGridViewProduct.DataSource, "Detail", true, DataSourceUpdateMode.Never));
             textBoxDateCreate.DataBindings.Add(new Binding("Text", dataGridViewProduct.DataSource, "DateCreated", true, DataSourceUpdateMode.Never));
 
+        }
+
+        private void loadCatalog()
+        {
+            comboBoxCatalog.DataSource = service.getCatalogs();
+            comboBoxCatalog.DisplayMember = "CatalogName";
+            bindingSourceCatalog.DataSource = service.getCatalogs();
+        }
+
+        private void addCatalogBinding()
+        {
+            textBoxIdCatalog.DataBindings.Add(new Binding("Text", dataGridViewCatalog.DataSource, "Id", true, DataSourceUpdateMode.Never));
+            textBoxCatalogName.DataBindings.Add(new Binding("Text", dataGridViewCatalog.DataSource, "CatalogName", true, DataSourceUpdateMode.Never));
+            textBoxCatalogDetail.DataBindings.Add(new Binding("Text", dataGridViewCatalog.DataSource, "CatalogDetails", true, DataSourceUpdateMode.Never));
+            textBoxDateCreateCatalog.DataBindings.Add(new Binding("Text", dataGridViewCatalog.DataSource, "DateCreated", true, DataSourceUpdateMode.Never));
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
