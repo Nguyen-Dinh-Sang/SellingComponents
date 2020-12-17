@@ -66,6 +66,30 @@ namespace WindowsForms.Presentation
             this.comboBoxComBo = new System.Windows.Forms.ComboBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.dataGridViewClassifyProduct = new System.Windows.Forms.DataGridView();
+            this.dataGridViewClassify = new System.Windows.Forms.DataGridView();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.panel36 = new System.Windows.Forms.Panel();
+            this.textBoxDateCreateClassify = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.panel38 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.panel39 = new System.Windows.Forms.Panel();
+            this.textBoxClassifyDetail = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.panel40 = new System.Windows.Forms.Panel();
+            this.textBoxClassifyName = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.panel41 = new System.Windows.Forms.Panel();
+            this.textBoxIdClassify = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel42 = new System.Windows.Forms.Panel();
+            this.textBoxSearchClassify = new System.Windows.Forms.TextBox();
+            this.buttonSearchClassify = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
@@ -79,7 +103,7 @@ namespace WindowsForms.Presentation
             this.textBoxDateCreateCombo = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.panel31 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxComboCatalog = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.panel30 = new System.Windows.Forms.Panel();
             this.textBoxPriceCombo = new System.Windows.Forms.TextBox();
@@ -148,6 +172,17 @@ namespace WindowsForms.Presentation
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.panel1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.panel34.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClassifyProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClassify)).BeginInit();
+            this.panel35.SuspendLayout();
+            this.panel36.SuspendLayout();
+            this.panel37.SuspendLayout();
+            this.panel39.SuspendLayout();
+            this.panel40.SuspendLayout();
+            this.panel41.SuspendLayout();
+            this.panel42.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel22.SuspendLayout();
@@ -524,12 +559,228 @@ namespace WindowsForms.Presentation
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel34);
+            this.tabPage1.Controls.Add(this.dataGridViewClassify);
+            this.tabPage1.Controls.Add(this.panel35);
+            this.tabPage1.Controls.Add(this.panel42);
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(937, 597);
             this.tabPage1.TabIndex = 7;
             this.tabPage1.Text = "Loại Linh Kiện";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel34
+            // 
+            this.panel34.Controls.Add(this.dataGridViewClassifyProduct);
+            this.panel34.Location = new System.Drawing.Point(487, 349);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(450, 248);
+            this.panel34.TabIndex = 11;
+            // 
+            // dataGridViewClassifyProduct
+            // 
+            this.dataGridViewClassifyProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewClassifyProduct.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewClassifyProduct.Name = "dataGridViewClassifyProduct";
+            this.dataGridViewClassifyProduct.RowTemplate.Height = 25;
+            this.dataGridViewClassifyProduct.Size = new System.Drawing.Size(450, 247);
+            this.dataGridViewClassifyProduct.TabIndex = 0;
+            // 
+            // dataGridViewClassify
+            // 
+            this.dataGridViewClassify.AllowUserToAddRows = false;
+            this.dataGridViewClassify.AllowUserToDeleteRows = false;
+            this.dataGridViewClassify.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewClassify.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewClassify.Location = new System.Drawing.Point(0, 108);
+            this.dataGridViewClassify.Name = "dataGridViewClassify";
+            this.dataGridViewClassify.ReadOnly = true;
+            this.dataGridViewClassify.RowTemplate.Height = 25;
+            this.dataGridViewClassify.Size = new System.Drawing.Size(486, 488);
+            this.dataGridViewClassify.TabIndex = 10;
+            // 
+            // panel35
+            // 
+            this.panel35.Controls.Add(this.panel36);
+            this.panel35.Controls.Add(this.panel37);
+            this.panel35.Controls.Add(this.panel39);
+            this.panel35.Controls.Add(this.panel40);
+            this.panel35.Controls.Add(this.panel41);
+            this.panel35.Location = new System.Drawing.Point(487, 108);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(450, 241);
+            this.panel35.TabIndex = 9;
+            // 
+            // panel36
+            // 
+            this.panel36.Controls.Add(this.textBoxDateCreateClassify);
+            this.panel36.Controls.Add(this.label20);
+            this.panel36.Location = new System.Drawing.Point(6, 123);
+            this.panel36.Name = "panel36";
+            this.panel36.Size = new System.Drawing.Size(437, 42);
+            this.panel36.TabIndex = 7;
+            // 
+            // textBoxDateCreateClassify
+            // 
+            this.textBoxDateCreateClassify.Location = new System.Drawing.Point(123, 8);
+            this.textBoxDateCreateClassify.Name = "textBoxDateCreateClassify";
+            this.textBoxDateCreateClassify.Size = new System.Drawing.Size(314, 26);
+            this.textBoxDateCreateClassify.TabIndex = 1;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(0, 11);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(88, 19);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Ngày Tạo:";
+            // 
+            // panel37
+            // 
+            this.panel37.Controls.Add(this.panel38);
+            this.panel37.Controls.Add(this.button2);
+            this.panel37.Controls.Add(this.button5);
+            this.panel37.Controls.Add(this.button6);
+            this.panel37.Location = new System.Drawing.Point(0, 163);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(450, 77);
+            this.panel37.TabIndex = 5;
+            // 
+            // panel38
+            // 
+            this.panel38.Location = new System.Drawing.Point(0, 78);
+            this.panel38.Name = "panel38";
+            this.panel38.Size = new System.Drawing.Size(450, 248);
+            this.panel38.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(325, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 36);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Sửa";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(178, 21);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 36);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Xóa";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(27, 21);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(100, 36);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "Thêm";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // panel39
+            // 
+            this.panel39.Controls.Add(this.textBoxClassifyDetail);
+            this.panel39.Controls.Add(this.label21);
+            this.panel39.Location = new System.Drawing.Point(6, 83);
+            this.panel39.Name = "panel39";
+            this.panel39.Size = new System.Drawing.Size(437, 42);
+            this.panel39.TabIndex = 5;
+            // 
+            // textBoxClassifyDetail
+            // 
+            this.textBoxClassifyDetail.Location = new System.Drawing.Point(123, 8);
+            this.textBoxClassifyDetail.Name = "textBoxClassifyDetail";
+            this.textBoxClassifyDetail.Size = new System.Drawing.Size(314, 26);
+            this.textBoxClassifyDetail.TabIndex = 1;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(0, 11);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(73, 19);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Chi Tiết:";
+            // 
+            // panel40
+            // 
+            this.panel40.Controls.Add(this.textBoxClassifyName);
+            this.panel40.Controls.Add(this.label22);
+            this.panel40.Location = new System.Drawing.Point(6, 42);
+            this.panel40.Name = "panel40";
+            this.panel40.Size = new System.Drawing.Size(437, 42);
+            this.panel40.TabIndex = 2;
+            // 
+            // textBoxClassifyName
+            // 
+            this.textBoxClassifyName.Location = new System.Drawing.Point(123, 8);
+            this.textBoxClassifyName.Name = "textBoxClassifyName";
+            this.textBoxClassifyName.Size = new System.Drawing.Size(314, 26);
+            this.textBoxClassifyName.TabIndex = 1;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(0, 11);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(48, 19);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Loại:";
+            // 
+            // panel41
+            // 
+            this.panel41.Controls.Add(this.textBoxIdClassify);
+            this.panel41.Controls.Add(this.label23);
+            this.panel41.Location = new System.Drawing.Point(6, 2);
+            this.panel41.Name = "panel41";
+            this.panel41.Size = new System.Drawing.Size(437, 42);
+            this.panel41.TabIndex = 0;
+            // 
+            // textBoxIdClassify
+            // 
+            this.textBoxIdClassify.Location = new System.Drawing.Point(123, 8);
+            this.textBoxIdClassify.Name = "textBoxIdClassify";
+            this.textBoxIdClassify.Size = new System.Drawing.Size(314, 26);
+            this.textBoxIdClassify.TabIndex = 1;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(0, 11);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(31, 19);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "ID:";
+            // 
+            // panel42
+            // 
+            this.panel42.Controls.Add(this.textBoxSearchClassify);
+            this.panel42.Controls.Add(this.buttonSearchClassify);
+            this.panel42.Location = new System.Drawing.Point(0, 37);
+            this.panel42.Name = "panel42";
+            this.panel42.Size = new System.Drawing.Size(937, 37);
+            this.panel42.TabIndex = 8;
+            // 
+            // textBoxSearchClassify
+            // 
+            this.textBoxSearchClassify.Location = new System.Drawing.Point(35, 6);
+            this.textBoxSearchClassify.Name = "textBoxSearchClassify";
+            this.textBoxSearchClassify.Size = new System.Drawing.Size(744, 26);
+            this.textBoxSearchClassify.TabIndex = 5;
+            // 
+            // buttonSearchClassify
+            // 
+            this.buttonSearchClassify.Location = new System.Drawing.Point(801, 1);
+            this.buttonSearchClassify.Name = "buttonSearchClassify";
+            this.buttonSearchClassify.Size = new System.Drawing.Size(100, 36);
+            this.buttonSearchClassify.TabIndex = 1;
+            this.buttonSearchClassify.Text = "Tìm Kiếm";
+            this.buttonSearchClassify.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -650,20 +901,21 @@ namespace WindowsForms.Presentation
             // 
             // panel31
             // 
-            this.panel31.Controls.Add(this.comboBox1);
+            this.panel31.Controls.Add(this.comboBoxComboCatalog);
             this.panel31.Controls.Add(this.label17);
             this.panel31.Location = new System.Drawing.Point(6, 203);
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(437, 42);
             this.panel31.TabIndex = 9;
             // 
-            // comboBox1
+            // comboBoxComboCatalog
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(123, 6);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(314, 27);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxComboCatalog.FormattingEnabled = true;
+            this.comboBoxComboCatalog.Location = new System.Drawing.Point(123, 6);
+            this.comboBoxComboCatalog.Name = "comboBoxComboCatalog";
+            this.comboBoxComboCatalog.Size = new System.Drawing.Size(314, 27);
+            this.comboBoxComboCatalog.TabIndex = 1;
+            this.comboBoxComboCatalog.SelectedIndexChanged += new System.EventHandler(this.comboBoxComboCatalog_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -757,6 +1009,7 @@ namespace WindowsForms.Presentation
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(437, 42);
             this.panel28.TabIndex = 2;
+            this.panel28.Paint += new System.Windows.Forms.PaintEventHandler(this.panel28_Paint);
             // 
             // textBoxComboName
             // 
@@ -789,6 +1042,7 @@ namespace WindowsForms.Presentation
             this.textBoxIdCombo.Name = "textBoxIdCombo";
             this.textBoxIdCombo.Size = new System.Drawing.Size(314, 26);
             this.textBoxIdCombo.TabIndex = 1;
+            this.textBoxIdCombo.TextChanged += new System.EventHandler(this.textBoxIdCombo_TextChanged);
             // 
             // label15
             // 
@@ -878,6 +1132,7 @@ namespace WindowsForms.Presentation
             this.buttonSearchCombo.TabIndex = 1;
             this.buttonSearchCombo.Text = "Tìm Kiếm";
             this.buttonSearchCombo.UseVisualStyleBackColor = true;
+            this.buttonSearchCombo.Click += new System.EventHandler(this.buttonSearchCombo_Click);
             // 
             // tabPage4
             // 
@@ -1167,6 +1422,22 @@ namespace WindowsForms.Presentation
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.panel34.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClassifyProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClassify)).EndInit();
+            this.panel35.ResumeLayout(false);
+            this.panel36.ResumeLayout(false);
+            this.panel36.PerformLayout();
+            this.panel37.ResumeLayout(false);
+            this.panel39.ResumeLayout(false);
+            this.panel39.PerformLayout();
+            this.panel40.ResumeLayout(false);
+            this.panel40.PerformLayout();
+            this.panel41.ResumeLayout(false);
+            this.panel41.PerformLayout();
+            this.panel42.ResumeLayout(false);
+            this.panel42.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
@@ -1317,6 +1588,37 @@ namespace WindowsForms.Presentation
         private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.TextBox textBoxPriceCombo;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxComboCatalog;
+        private System.Windows.Forms.Panel panel34;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Panel panel35;
+        private System.Windows.Forms.Panel panel36;
+        private System.Windows.Forms.TextBox textBoxDateCreateClassify;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.Panel panel38;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel panel39;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel40;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel panel41;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel panel42;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.DataGridView dataGridViewClassifyProduct;
+        private System.Windows.Forms.DataGridView dataGridViewClassify;
+        private System.Windows.Forms.TextBox textBoxClassifyDetail;
+        private System.Windows.Forms.TextBox textBoxClassifyName;
+        private System.Windows.Forms.TextBox textBoxIdClassify;
+        private System.Windows.Forms.TextBox textBoxSearchClassify;
+        private System.Windows.Forms.Button buttonSearchClassify;
     }
 }

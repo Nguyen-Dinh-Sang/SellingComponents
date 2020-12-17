@@ -82,5 +82,10 @@ namespace WindowsForms.Business.Service
         {
             return comboService.getCombos();
         }
+
+        public ComboDTO getComboByID(int id)
+        {
+            return comboService.getComboById(id);
+        }
     }
 }
