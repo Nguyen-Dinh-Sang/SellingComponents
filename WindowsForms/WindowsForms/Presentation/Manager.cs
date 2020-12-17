@@ -19,6 +19,7 @@ namespace WindowsForms.Presentation
         private BindingSource bindingSourceProduct = new BindingSource();
         private BindingSource bindingSourceCatalog = new BindingSource();
         private BindingSource bindingSourceCombo = new BindingSource();
+        private BindingSource bindingSourceClassify = new BindingSource();
 
         public Manager(String username)
         {
@@ -32,13 +33,15 @@ namespace WindowsForms.Presentation
             dataGridViewProduct.DataSource = bindingSourceProduct;
             dataGridViewCatalog.DataSource = bindingSourceCatalog;
             dataGridViewCombo.DataSource = bindingSourceCombo;
+            dataGridViewClassify.DataSource = bindingSourceClassify;
             loadProduct();
             addProductBinding();
             loadClassifies();
             loadCatalog();
             addCatalogBinding();
             loadCombo();
-            addComboBingding();
+            addComboBinding();
+            addClassifyBinding();
         }
 
         private void loadProduct()
@@ -50,6 +53,7 @@ namespace WindowsForms.Presentation
         {
             comboBoxClassify2.DataSource = service.getClassifies();
             comboBoxClassify2.DisplayMember = "ClassifyName";
+            bindingSourceClassify.DataSource = service.getClassifies();
         }
 
         private void addProductBinding()
@@ -89,7 +93,7 @@ namespace WindowsForms.Presentation
             comboBoxComBo.DisplayMember = "ComboName";
         }
 
-        private void addComboBingding()
+        private void addComboBinding()
         {
             textBoxIdCombo.DataBindings.Add(new Binding("Text", dataGridViewCombo.DataSource, "Id", true, DataSourceUpdateMode.Never));
             textBoxComboName.DataBindings.Add(new Binding("Text", dataGridViewCombo.DataSource, "ComboName", true, DataSourceUpdateMode.Never));
@@ -97,6 +101,14 @@ namespace WindowsForms.Presentation
             textBoxDateCreateCombo.DataBindings.Add(new Binding("Text", dataGridViewCombo.DataSource, "DateCreated", true, DataSourceUpdateMode.Never));
             textBoxPriceCombo.DataBindings.Add(new Binding("Text", dataGridViewCombo.DataSource, "Price", true, DataSourceUpdateMode.Never));
             textBoxTotalCostCombo.DataBindings.Add(new Binding("Text", dataGridViewCombo.DataSource, "TotalCost", true, DataSourceUpdateMode.Never));
+        }
+
+        private void addClassifyBinding()
+        {
+            textBoxIdClassify.DataBindings.Add(new Binding("Text", dataGridViewClassify.DataSource, "Id", true, DataSourceUpdateMode.Never));
+            textBoxClassifyName.DataBindings.Add(new Binding("Text", dataGridViewClassify.DataSource, "ClassifyName", true, DataSourceUpdateMode.Never));
+            textBoxClassifyDetail.DataBindings.Add(new Binding("Text", dataGridViewClassify.DataSource, "ClassifyDetail", true, DataSourceUpdateMode.Never));
+            textBoxDateCreateClassify.DataBindings.Add(new Binding("Text", dataGridViewClassify.DataSource, "DateCreated", true, DataSourceUpdateMode.Never));
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -266,6 +278,11 @@ namespace WindowsForms.Presentation
                 }
                 comboBoxComboCatalog.SelectedIndex = index;
             }
+        }
+
+        private void buttonSearchClassify_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

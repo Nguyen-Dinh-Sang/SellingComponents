@@ -781,6 +781,7 @@ namespace WindowsForms.Presentation
             this.buttonSearchClassify.TabIndex = 1;
             this.buttonSearchClassify.Text = "Tìm Kiếm";
             this.buttonSearchClassify.UseVisualStyleBackColor = true;
+            this.buttonSearchClassify.Click += new System.EventHandler(this.buttonSearchClassify_Click);
             // 
             // tabPage3
             // 
