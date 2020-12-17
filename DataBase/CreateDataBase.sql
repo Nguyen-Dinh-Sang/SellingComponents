@@ -136,6 +136,7 @@ CREATE TABLE OrdersDetails(
 	IdOrders INT NOT NULL,
 	IdCombo INT,
 	IdProduct INT,
+	IdUser INT,
 	Amount INT NOT NULL,
 	Price DECIMAL(13,1) NOT NULL,
 	DateCreated DATE DEFAULT GETDATE(),

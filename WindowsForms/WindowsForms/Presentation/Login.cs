@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsForms.Business.Service;
+using WindowsForms.DataAccess.Repository;
 
-namespace WindowsForms
+namespace WindowsForms.Presentation
 {
     public partial class Login : Form
     {
@@ -44,10 +46,19 @@ namespace WindowsForms
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            Manager manager = new Manager();
-            this.Hide();
-            manager.ShowDialog(); // show lên trên cùng xử nhưng form bên dưới không được hoạt động
-            this.Show();
+            String username = textBoxUserName.Text;
+            String password = textBoxPassword.Text;
+
+            if (UserService.getInstance().checkLogin(username, password))
+            {
+                Manager manager = new Manager(username);
+                this.Hide();
+                manager.ShowDialog(); // show lên trên cùng, chỉ xử lý form trên cùng,những form bên dưới không được hoạt động
+                this.Show();
+            } else
+            {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
+            }
         }
     }
 }

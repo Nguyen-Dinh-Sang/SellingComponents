@@ -1,5 +1,5 @@
 ﻿
-namespace WindowsForms
+namespace WindowsForms.Presentation
 {
     partial class Login
     {
