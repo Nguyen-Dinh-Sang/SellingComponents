@@ -12,6 +12,7 @@ namespace WindowsForms.Business.DTO
         public string ClassifyName { get; set; }
         [DisplayName("Chi Tiết")]
         public string ClassifyDetail { get; set; }
+        [DisplayName("Ngày Tạo")]
         public DateTime? DateCreated { get; set; }
     }
 }
