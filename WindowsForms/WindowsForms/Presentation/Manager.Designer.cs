@@ -528,6 +528,7 @@ namespace WindowsForms.Presentation
             this.comboBoxClassify.Size = new System.Drawing.Size(164, 27);
             this.comboBoxClassify.TabIndex = 4;
             this.comboBoxClassify.Text = "Loại";
+            this.comboBoxClassify.SelectedIndexChanged += new System.EventHandler(this.comboBoxClassify_SelectedIndexChanged);
             // 
             // comboBoxCatalog
             // 

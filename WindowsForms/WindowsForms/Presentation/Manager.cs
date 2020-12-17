@@ -309,5 +309,11 @@ namespace WindowsForms.Presentation
         {
 
         }
+
+        private void comboBoxClassify_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idClassify = (comboBoxClassify.SelectedItem as ClassifyDTO).Id;
+            bindingSourceProduct.DataSource = service.getProductByIdClassify(idClassify);
+        }
     }
 }

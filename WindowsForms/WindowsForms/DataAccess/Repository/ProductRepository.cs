@@ -96,5 +96,14 @@ namespace WindowsForms.DataAccess.Repository
 
             return queryProduct;
         }
+
+        public IEnumerable<Product> getProductByIdClassify(int idClassify)
+        {
+            var queryProduct = (from p in sellingComponentsDBContext.Products
+                                where p.IdClassify == idClassify
+                                select p);
+
+            return queryProduct;
+        }
     }
 }

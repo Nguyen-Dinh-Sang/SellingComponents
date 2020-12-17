@@ -102,5 +102,10 @@ namespace WindowsForms.Business.Service
         {
             return productService.getProductByIdCombo(idCombo);
         }
+
+        public List<ProductDTO> getProductByIdClassify(int idClassify)
+        {
+            return productService.getProductByIdClassify(idClassify);
+        }
     }
 }

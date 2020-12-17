@@ -67,5 +67,10 @@ namespace WindowsForms.Business.Service
         {
             return new List<ProductDTO>(mapper.Map<IEnumerable<Product>, IEnumerable<ProductDTO>>(productRepository.getProductByIdCombo(idCombo)));
         }
+
+        public List<ProductDTO> getProductByIdClassify(int idClassify)
+        {
+            return new List<ProductDTO>(mapper.Map<IEnumerable<Product>, IEnumerable<ProductDTO>>(productRepository.getProductByIdClassify(idClassify)));
+        }
     }
 }
