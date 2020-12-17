@@ -18,6 +18,7 @@ namespace WindowsForms.Presentation
         private Service service = Service.getInstance();
         private BindingSource bindingSourceProduct = new BindingSource();
         private BindingSource bindingSourceCatalog = new BindingSource();
+        private BindingSource bindingSourceCombo = new BindingSource();
 
         public Manager(String username)
         {
@@ -30,11 +31,13 @@ namespace WindowsForms.Presentation
         {
             dataGridViewProduct.DataSource = bindingSourceProduct;
             dataGridViewCatalog.DataSource = bindingSourceCatalog;
+            dataGridViewCombo.DataSource = bindingSourceCombo;
             loadProduct();
             addProductBinding();
             loadClassifies();
             loadCatalog();
             addCatalogBinding();
+            loadCombo();
         }
 
         private void loadProduct()
@@ -64,6 +67,8 @@ namespace WindowsForms.Presentation
             comboBoxCatalog.DataSource = service.getCatalogs();
             comboBoxCatalog.DisplayMember = "CatalogName";
             bindingSourceCatalog.DataSource = service.getCatalogs();
+            comboBoxCatalogCombo.DataSource = service.getCatalogs();
+            comboBoxCatalogCombo.DisplayMember = "CatalogName";
         }
 
         private void addCatalogBinding()
@@ -72,6 +77,13 @@ namespace WindowsForms.Presentation
             textBoxCatalogName.DataBindings.Add(new Binding("Text", dataGridViewCatalog.DataSource, "CatalogName", true, DataSourceUpdateMode.Never));
             textBoxCatalogDetail.DataBindings.Add(new Binding("Text", dataGridViewCatalog.DataSource, "CatalogDetails", true, DataSourceUpdateMode.Never));
             textBoxDateCreateCatalog.DataBindings.Add(new Binding("Text", dataGridViewCatalog.DataSource, "DateCreated", true, DataSourceUpdateMode.Never));
+        }
+
+        private void loadCombo()
+        {
+            dataGridViewCombo.DataSource = service.getCombos();
+            comboBoxComBo.DataSource = service.getCombos();
+            comboBoxComBo.DisplayMember = "ComboName";
         }
 
         private void tabPage1_Click(object sender, EventArgs e)

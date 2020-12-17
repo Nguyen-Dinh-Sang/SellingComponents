@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using WindowsForms.Business.DTO;
+using WindowsForms.DataAccess.Entity;
 
 namespace WindowsForms.Business.Service
 {
@@ -12,6 +13,8 @@ namespace WindowsForms.Business.Service
         private ProductService productService = ProductService.getInstance();
 
         private CatalogService catalogService = CatalogService.getInstance();
+
+        private ComboService comboService = ComboService.getInstance();
 
         private static Service instance;
 
@@ -73,6 +76,11 @@ namespace WindowsForms.Business.Service
         public void deleteCatalog(int id)
         {
             catalogService.delete(id);
+        }
+
+        public List<ComboDTO> getCombos()
+        {
+            return comboService.getCombos();
         }
     }
 }
