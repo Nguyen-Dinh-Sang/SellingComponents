@@ -36,5 +36,20 @@ namespace WindowsForms.Business.Service
         {
             return new List<CatalogDTO>(mapper.Map<IEnumerable<Catalog>, IEnumerable<CatalogDTO>>(catalogRepository.getCatalogs()));
         }
+
+        public void create(CatalogDTO catalog)
+        {
+            catalogRepository.create(mapper.Map<CatalogDTO, Catalog>(catalog));
+        }
+
+        public void edit(CatalogDTO catalog)
+        {
+            catalogRepository.edit(mapper.Map<CatalogDTO, Catalog>(catalog));
+        }
+
+        public void delete(int id)
+        {
+            catalogRepository.delete(id);
+        }
     }
 }

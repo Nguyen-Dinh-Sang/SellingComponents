@@ -69,14 +69,17 @@ namespace WindowsForms.Presentation
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridViewCatalog = new System.Windows.Forms.DataGridView();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.buttonEditCatalog = new System.Windows.Forms.Button();
-            this.buttonDeleteCatalog = new System.Windows.Forms.Button();
-            this.buttonCreateCatalog = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel = new System.Windows.Forms.Panel();
             this.textBoxDateCreateCatalog = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.buttonEditCatalog = new System.Windows.Forms.Button();
+            this.buttonDeleteCatalog = new System.Windows.Forms.Button();
+            this.buttonCreateCatalog = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.textBoxCatalogDetail = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
             this.textBoxCatalogName = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -89,9 +92,6 @@ namespace WindowsForms.Presentation
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxCatalogDetail = new System.Windows.Forms.TextBox();
-            this.panel17 = new System.Windows.Forms.Panel();
             this.tabControlManager.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -109,13 +109,13 @@ namespace WindowsForms.Presentation
             this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCatalog)).BeginInit();
-            this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel12.SuspendLayout();
-            this.panel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlManager
@@ -507,43 +507,6 @@ namespace WindowsForms.Presentation
             this.dataGridViewCatalog.Size = new System.Drawing.Size(486, 488);
             this.dataGridViewCatalog.TabIndex = 6;
             // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.buttonEditCatalog);
-            this.panel13.Controls.Add(this.buttonDeleteCatalog);
-            this.panel13.Controls.Add(this.buttonCreateCatalog);
-            this.panel13.Location = new System.Drawing.Point(0, 163);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(450, 77);
-            this.panel13.TabIndex = 5;
-            // 
-            // buttonEditCatalog
-            // 
-            this.buttonEditCatalog.Location = new System.Drawing.Point(325, 21);
-            this.buttonEditCatalog.Name = "buttonEditCatalog";
-            this.buttonEditCatalog.Size = new System.Drawing.Size(100, 36);
-            this.buttonEditCatalog.TabIndex = 2;
-            this.buttonEditCatalog.Text = "Sửa";
-            this.buttonEditCatalog.UseVisualStyleBackColor = true;
-            // 
-            // buttonDeleteCatalog
-            // 
-            this.buttonDeleteCatalog.Location = new System.Drawing.Point(178, 21);
-            this.buttonDeleteCatalog.Name = "buttonDeleteCatalog";
-            this.buttonDeleteCatalog.Size = new System.Drawing.Size(100, 36);
-            this.buttonDeleteCatalog.TabIndex = 1;
-            this.buttonDeleteCatalog.Text = "Xóa";
-            this.buttonDeleteCatalog.UseVisualStyleBackColor = true;
-            // 
-            // buttonCreateCatalog
-            // 
-            this.buttonCreateCatalog.Location = new System.Drawing.Point(27, 21);
-            this.buttonCreateCatalog.Name = "buttonCreateCatalog";
-            this.buttonCreateCatalog.Size = new System.Drawing.Size(100, 36);
-            this.buttonCreateCatalog.TabIndex = 0;
-            this.buttonCreateCatalog.Text = "Thêm";
-            this.buttonCreateCatalog.UseVisualStyleBackColor = true;
-            // 
             // panel14
             // 
             this.panel14.Controls.Add(this.panel);
@@ -580,6 +543,71 @@ namespace WindowsForms.Presentation
             this.label8.Size = new System.Drawing.Size(88, 19);
             this.label8.TabIndex = 0;
             this.label8.Text = "Ngày Tạo:";
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.buttonEditCatalog);
+            this.panel13.Controls.Add(this.buttonDeleteCatalog);
+            this.panel13.Controls.Add(this.buttonCreateCatalog);
+            this.panel13.Location = new System.Drawing.Point(0, 163);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(450, 77);
+            this.panel13.TabIndex = 5;
+            // 
+            // buttonEditCatalog
+            // 
+            this.buttonEditCatalog.Location = new System.Drawing.Point(325, 21);
+            this.buttonEditCatalog.Name = "buttonEditCatalog";
+            this.buttonEditCatalog.Size = new System.Drawing.Size(100, 36);
+            this.buttonEditCatalog.TabIndex = 2;
+            this.buttonEditCatalog.Text = "Sửa";
+            this.buttonEditCatalog.UseVisualStyleBackColor = true;
+            this.buttonEditCatalog.Click += new System.EventHandler(this.buttonEditCatalog_Click);
+            // 
+            // buttonDeleteCatalog
+            // 
+            this.buttonDeleteCatalog.Location = new System.Drawing.Point(178, 21);
+            this.buttonDeleteCatalog.Name = "buttonDeleteCatalog";
+            this.buttonDeleteCatalog.Size = new System.Drawing.Size(100, 36);
+            this.buttonDeleteCatalog.TabIndex = 1;
+            this.buttonDeleteCatalog.Text = "Xóa";
+            this.buttonDeleteCatalog.UseVisualStyleBackColor = true;
+            this.buttonDeleteCatalog.Click += new System.EventHandler(this.buttonDeleteCatalog_Click);
+            // 
+            // buttonCreateCatalog
+            // 
+            this.buttonCreateCatalog.Location = new System.Drawing.Point(27, 21);
+            this.buttonCreateCatalog.Name = "buttonCreateCatalog";
+            this.buttonCreateCatalog.Size = new System.Drawing.Size(100, 36);
+            this.buttonCreateCatalog.TabIndex = 0;
+            this.buttonCreateCatalog.Text = "Thêm";
+            this.buttonCreateCatalog.UseVisualStyleBackColor = true;
+            this.buttonCreateCatalog.Click += new System.EventHandler(this.buttonCreateCatalog_Click);
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.textBoxCatalogDetail);
+            this.panel17.Controls.Add(this.label10);
+            this.panel17.Location = new System.Drawing.Point(6, 83);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(437, 42);
+            this.panel17.TabIndex = 5;
+            // 
+            // textBoxCatalogDetail
+            // 
+            this.textBoxCatalogDetail.Location = new System.Drawing.Point(123, 8);
+            this.textBoxCatalogDetail.Name = "textBoxCatalogDetail";
+            this.textBoxCatalogDetail.Size = new System.Drawing.Size(314, 26);
+            this.textBoxCatalogDetail.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(0, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 19);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Chi Tiết:";
             // 
             // panel20
             // 
@@ -683,31 +711,6 @@ namespace WindowsForms.Presentation
             this.tabPage7.Text = "Thông Tin Tài Khoản";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(0, 11);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 19);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Chi Tiết:";
-            // 
-            // textBoxCatalogDetail
-            // 
-            this.textBoxCatalogDetail.Location = new System.Drawing.Point(123, 8);
-            this.textBoxCatalogDetail.Name = "textBoxCatalogDetail";
-            this.textBoxCatalogDetail.Size = new System.Drawing.Size(314, 26);
-            this.textBoxCatalogDetail.TabIndex = 1;
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.textBoxCatalogDetail);
-            this.panel17.Controls.Add(this.label10);
-            this.panel17.Location = new System.Drawing.Point(6, 83);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(437, 42);
-            this.panel17.TabIndex = 5;
-            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -742,18 +745,18 @@ namespace WindowsForms.Presentation
             this.panel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCatalog)).EndInit();
-            this.panel13.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
             this.ResumeLayout(false);
 
         }
