@@ -174,5 +174,36 @@ namespace WindowsForms.Presentation
         {
 
         }
+
+        private void buttonCreateCatalog_Click(object sender, EventArgs e)
+        {
+            string catalogName = textBoxCatalogName.Text;
+            string catalogDetail = textBoxCatalogDetail.Text;
+            CatalogDTO catalog = new CatalogDTO();
+            catalog.CatalogDetails = catalogDetail;
+            catalog.CatalogName = catalogName;
+            service.createCatalog(catalog);
+            loadCatalog();
+        }
+
+        private void buttonDeleteCatalog_Click(object sender, EventArgs e)
+        {
+            int idCatalog = Convert.ToInt32(textBoxIdCatalog.Text);
+            service.deleteCatalog(idCatalog);
+            loadCatalog();
+        }
+
+        private void buttonEditCatalog_Click(object sender, EventArgs e)
+        {
+            int catalogId = Convert.ToInt32(textBoxIdCatalog.Text);
+            string catalogName = textBoxCatalogName.Text;
+            string catalogDetail = textBoxCatalogDetail.Text;
+            CatalogDTO catalog = new CatalogDTO();
+            catalog.Id = catalogId;
+            catalog.CatalogDetails = catalogDetail;
+            catalog.CatalogName = catalogName;
+            service.editCatalog(catalog);
+            loadCatalog();
+        }
     }
 }

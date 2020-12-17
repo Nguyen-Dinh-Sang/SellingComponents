@@ -59,5 +59,20 @@ namespace WindowsForms.Business.Service
         {
             productService.delete(id);
         }
+
+        public void createCatalog(CatalogDTO catalog)
+        {
+            catalogService.create(catalog);
+        }
+
+        public void editCatalog(CatalogDTO catalog)
+        {
+            catalogService.edit(catalog);
+        }
+
+        public void deleteCatalog(int id)
+        {
+            catalogService.delete(id);
+        }
     }
 }
