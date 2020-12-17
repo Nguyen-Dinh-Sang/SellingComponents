@@ -42,5 +42,15 @@ namespace WindowsForms.DataAccess.Repository
                     where c.Id == idClassify
                     select c).First();
         }
+
+        public IEnumerable<Classify> getClassifyBySearchString(string searchValue)
+        {
+            var queryClassify = (from c in sellingComponentsDBContext.Classifies
+                                where c.ClassifyName.Contains(searchValue) ||
+                                      c.ClassifyDetail.Contains(searchValue)
+                                select c);
+
+            return queryClassify;
+        }
     }
 }

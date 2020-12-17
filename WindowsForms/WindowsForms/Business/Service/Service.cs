@@ -107,5 +107,10 @@ namespace WindowsForms.Business.Service
         {
             return productService.getProductByIdClassify(idClassify);
         }
+
+        public List<ClassifyDTO> getClassifyBySearchString(string searchValue)
+        {
+            return classifyService.getClassifyBySearchString(searchValue);
+        }
     }
 }

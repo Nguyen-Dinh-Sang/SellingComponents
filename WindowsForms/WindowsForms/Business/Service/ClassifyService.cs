@@ -41,5 +41,10 @@ namespace WindowsForms.Business.Service
         {
             return mapper.Map<Classify, ClassifyDTO>(classifyRepository.getClassifyByIdProduct(id));
         }
+
+        public List<ClassifyDTO> getClassifyBySearchString(string searchValue)
+        {
+            return new List<ClassifyDTO>(mapper.Map<IEnumerable<Classify>, IEnumerable<ClassifyDTO>>(classifyRepository.getClassifyBySearchString(searchValue)));
+        }
     }
 }

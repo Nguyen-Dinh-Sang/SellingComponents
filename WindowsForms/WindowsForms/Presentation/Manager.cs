@@ -290,7 +290,15 @@ namespace WindowsForms.Presentation
 
         private void buttonSearchClassify_Click(object sender, EventArgs e)
         {
-
+            string searchValue = textBoxSearchClassify.Text;
+            if (searchValue.Equals(""))
+            {
+                bindingSourceClassify.DataSource = service.getClassifies();
+            }
+            else
+            {
+                bindingSourceClassify.DataSource = service.getClassifyBySearchString(searchValue);
+            }
         }
 
         private void comboBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
