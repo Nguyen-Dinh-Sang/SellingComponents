@@ -54,6 +54,8 @@ namespace WindowsForms.Presentation
             comboBoxClassify2.DataSource = service.getClassifies();
             comboBoxClassify2.DisplayMember = "ClassifyName";
             bindingSourceClassify.DataSource = service.getClassifies();
+            comboBoxClassify.DataSource = service.getClassifies();
+            comboBoxClassify.DisplayMember = "ClassifyName";
         }
 
         private void addProductBinding()
