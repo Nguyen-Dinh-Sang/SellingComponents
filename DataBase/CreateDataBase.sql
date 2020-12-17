@@ -136,7 +136,6 @@ CREATE TABLE OrdersDetails(
 	IdOrders INT NOT NULL,
 	IdCombo INT,
 	IdProduct INT,
-	IdUser INT,
 	Amount INT NOT NULL,
 	Price DECIMAL(13,1) NOT NULL,
 	DateCreated DATE DEFAULT GETDATE(),
@@ -152,5 +151,25 @@ CREATE TABLE OrdersDetails(
 	FOREIGN KEY(IdCombo)
 	REFERENCES Combo(Id)
 	ON DELETE CASCADE,
+)
+GO
+
+CREATE TABLE Cart(
+	Id INT IDENTITY(1,1) PRIMARY KEY,
+	IdCombo INT,
+	IdProduct INT,
+	IdUser INT,
+	CONSTRAINT Cart_UserInformation
+	FOREIGN KEY(IdUser)
+	REFERENCES UserInformation(Id)
+	ON DELETE CASCADE,
+	CONSTRAINT Cart_Combo
+	FOREIGN KEY(IdCombo)
+	REFERENCES Combo(Id)
+	ON DELETE CASCADE,
+	CONSTRAINT Cart_Product
+	FOREIGN KEY(IdProduct)
+	REFERENCES Product(Id)
+	ON DELETE CASCADE
 )
 GO
