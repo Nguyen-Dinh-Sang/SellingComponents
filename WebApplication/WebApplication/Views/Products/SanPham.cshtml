@@ -1,9 +1,4 @@
 ﻿@model IEnumerable<WebApplication.Models.Product>
-
-@{
-    ViewData["Title"] = "Index";
-}
-
 <div class="container">
     <div class="header">
         <div class="header_logo">
@@ -14,18 +9,18 @@
 
                 @using (Html.BeginForm("Index", "Products", FormMethod.Get))
                 {
-                        <input type="text" name="searchString" id="searchString">
-                        <input type="submit" name="btn_SearchString" id="btn_SearchString" value="Tìm kiếm">
-                   
+                    <input type="text" name="searchString" id="searchString">
+                    <input type="submit" name="btn_SearchString" id="btn_SearchString" value="Tìm kiếm">
+
                 }
-                </div>
+            </div>
         </div>
         <div class="header_thongtinkhachhang">
             <div style="width:100%;height:20px;">Trần Thanh Phong</div>
             <div style="height:40px;width:60px;margin-top:60px;">
                 <div style="float: right"><img src="~/image/giohang1.png" style="width:40px;height:100%;"></div>
                 <div id="giohang_soluong" name="giohang_soluong" style="font-size: 20px; color: white; width: 20px; height: 20px; background-color: red; border-radius: 3px; float: left; line-height: 20px; text-align: center;">
-                0
+                    0
                 </div>
             </div>
         </div>
@@ -36,7 +31,7 @@
                 Trang chủ
             </div>
         </a>
-        
+
     </div>
     <div class="contain_noidung">
         <div class="contain_menu">
@@ -46,9 +41,9 @@
                 <a href="/Products/SanPham?Id=@item.Id"><div class="contain_menu_danhmuc">@item.ClassifyName</div></a>
 
             }
-            @foreach(var item in ViewBag.catalog_menu)
+            @foreach (var item in ViewBag.catalog_menu)
             {
-        <a href="/Products/Combo?Id=@item.Id"><div class="contain_menu_danhmuc">@item.CatalogName</div></a>
+                <a href="/Products/Combo?Id=@item.Id"><div class="contain_menu_danhmuc">@item.CatalogName</div></a>
             }
 
         </div>
@@ -73,27 +68,8 @@
 
 
         </div>
-        <div class="contain_sanpham">
-            
-            @if (ViewBag.combo != null)
-            {<h1>Danh sách Compo</h1>
-                @foreach (var item in ViewBag.combo)
-                {
-                    <div class="contain_1_sanpham">
-                        <div style="width: 100%;height: 80%">
-                            <div style="font-size:25px;">@item.ComboName</div>
-                            @*<div style="font-size:25px;">@item.Price </div>*@
-
-                        </div>
-                        <div class="contain_1_sanpham_themgiohang">
-                            <div style="float: left;"><input type="button" name="btn_themgiohang" id="btn_themgiohang" value="Thêm vào giỏ hàng" onclick="ThemCombo_GioHang(@item.Id)" /> </div>
-                            <div style="float: right;"><input type="button" name="btn_muangay" id="btn_muangay" value="Mua ngay" onclick="Combo_MuaNgay(@item.Id)" /> </div>
-                        </div>
-                    </div>
-                }
-            }
-        </div>
         
+
         <div style="margin-left:20%;">
             @{
                 double totalPages = ViewBag.TotalPages;

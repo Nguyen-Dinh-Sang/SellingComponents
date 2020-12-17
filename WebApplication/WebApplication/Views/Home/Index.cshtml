@@ -1,8 +1,31 @@
-﻿@{
+﻿@model IEnumerable<WebApplication.Models.Product>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="contain_menu">
+    <div style="font-size:20px">Danh mục sản phẩm:</div>
+    <div class="contain_menu_danhmuc">1</div>
+    <div class="contain_menu_danhmuc">2</div>
+    <div class="contain_menu_danhmuc">3</div>
+    <div class="contain_menu_danhmuc">4</div>
+    <div class="contain_menu_danhmuc">5</div>
+    <div class="contain_menu_danhmuc">6</div>
 </div>
+<div class="contain_sanpham">
+    
+    <div class="contain_1_sanpham">
+        <div style="width: 100%;height: 80%">
+            <div style="font-size:25px;"></div>
+            <div style="font-size:25px;"></div>
+            
+        </div>
+        <div class="contain_1_sanpham_themgiohang">
+            <div style="float: left;"><input type="button" name="btn_themgiohang" id="btn_themgiohang" value="Thêm vào giỏ hàng" /> </div>
+            <div style="float: right;"><input type="button" name="btn_muangay" id="btn_muangay" value="Mua ngay" /> </div>
+        </div>
+    </div>
+    
+        
+
+    </div>
