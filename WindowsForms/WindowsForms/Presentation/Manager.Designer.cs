@@ -92,6 +92,9 @@ namespace WindowsForms.Presentation
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.dataGridViewDetailCatalog = new System.Windows.Forms.DataGridView();
             this.tabControlManager.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -116,6 +119,8 @@ namespace WindowsForms.Presentation
             this.panel20.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetailCatalog)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlManager
@@ -483,6 +488,7 @@ namespace WindowsForms.Presentation
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.panel16);
             this.tabPage4.Controls.Add(this.dataGridViewCatalog);
             this.tabPage4.Controls.Add(this.panel14);
             this.tabPage4.Controls.Add(this.panel12);
@@ -516,7 +522,7 @@ namespace WindowsForms.Presentation
             this.panel14.Controls.Add(this.panel21);
             this.panel14.Location = new System.Drawing.Point(487, 108);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(450, 289);
+            this.panel14.Size = new System.Drawing.Size(450, 241);
             this.panel14.TabIndex = 4;
             // 
             // panel
@@ -546,6 +552,7 @@ namespace WindowsForms.Presentation
             // 
             // panel13
             // 
+            this.panel13.Controls.Add(this.panel15);
             this.panel13.Controls.Add(this.buttonEditCatalog);
             this.panel13.Controls.Add(this.buttonDeleteCatalog);
             this.panel13.Controls.Add(this.buttonCreateCatalog);
@@ -711,6 +718,30 @@ namespace WindowsForms.Presentation
             this.tabPage7.Text = "Thông Tin Tài Khoản";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // panel15
+            // 
+            this.panel15.Location = new System.Drawing.Point(0, 78);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(450, 248);
+            this.panel15.TabIndex = 7;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.dataGridViewDetailCatalog);
+            this.panel16.Location = new System.Drawing.Point(487, 349);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(450, 248);
+            this.panel16.TabIndex = 7;
+            // 
+            // dataGridViewDetailCatalog
+            // 
+            this.dataGridViewDetailCatalog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDetailCatalog.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewDetailCatalog.Name = "dataGridViewDetailCatalog";
+            this.dataGridViewDetailCatalog.RowTemplate.Height = 25;
+            this.dataGridViewDetailCatalog.Size = new System.Drawing.Size(450, 247);
+            this.dataGridViewDetailCatalog.TabIndex = 0;
+            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -757,6 +788,8 @@ namespace WindowsForms.Presentation
             this.panel21.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetailCatalog)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -826,5 +859,8 @@ namespace WindowsForms.Presentation
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.TextBox textBoxCatalogDetail;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.DataGridView dataGridViewDetailCatalog;
     }
 }
