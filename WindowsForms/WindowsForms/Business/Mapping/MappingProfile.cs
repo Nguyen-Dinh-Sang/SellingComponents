@@ -19,6 +19,9 @@ namespace Business.Mapping
 
             CreateMap<CatalogDTO, Catalog>();
             CreateMap<Catalog, CatalogDTO>();
+
+            CreateMap<ComboDTO, Combo>();
+            CreateMap<Combo, ComboDTO>();
         }
     }
 }

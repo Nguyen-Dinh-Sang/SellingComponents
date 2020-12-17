@@ -6,7 +6,7 @@ using WindowsForms.DataAccess.Entity;
 
 namespace WindowsForms.DataAccess.Repository
 {
-    class CatalogRepository
+    public class CatalogRepository
     {
         private SellingComponentsDBContext sellingComponentsDBContext = SellingComponentsDBContext.getInstance();
 
