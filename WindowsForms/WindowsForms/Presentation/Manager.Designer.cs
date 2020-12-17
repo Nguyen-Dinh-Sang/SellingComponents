@@ -584,9 +584,13 @@ namespace WindowsForms.Presentation
             // 
             // dataGridViewClassifyProduct
             // 
+            this.dataGridViewClassifyProduct.AllowUserToAddRows = false;
+            this.dataGridViewClassifyProduct.AllowUserToDeleteRows = false;
+            this.dataGridViewClassifyProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewClassifyProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewClassifyProduct.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewClassifyProduct.Name = "dataGridViewClassifyProduct";
+            this.dataGridViewClassifyProduct.ReadOnly = true;
             this.dataGridViewClassifyProduct.RowTemplate.Height = 25;
             this.dataGridViewClassifyProduct.Size = new System.Drawing.Size(450, 247);
             this.dataGridViewClassifyProduct.TabIndex = 0;
@@ -754,6 +758,7 @@ namespace WindowsForms.Presentation
             this.textBoxIdClassify.Name = "textBoxIdClassify";
             this.textBoxIdClassify.Size = new System.Drawing.Size(314, 26);
             this.textBoxIdClassify.TabIndex = 1;
+            this.textBoxIdClassify.TextChanged += new System.EventHandler(this.textBoxIdClassify_TextChanged);
             // 
             // label23
             // 

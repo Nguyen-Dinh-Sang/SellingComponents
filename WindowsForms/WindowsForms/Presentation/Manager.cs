@@ -20,6 +20,7 @@ namespace WindowsForms.Presentation
         private BindingSource bindingSourceCatalog = new BindingSource();
         private BindingSource bindingSourceCombo = new BindingSource();
         private BindingSource bindingSourceClassify = new BindingSource();
+        private BindingSource bindingSourceClassifyProduct = new BindingSource();
 
         public Manager(String username)
         {
@@ -34,6 +35,7 @@ namespace WindowsForms.Presentation
             dataGridViewCatalog.DataSource = bindingSourceCatalog;
             dataGridViewCombo.DataSource = bindingSourceCombo;
             dataGridViewClassify.DataSource = bindingSourceClassify;
+            dataGridViewClassifyProduct.DataSource = bindingSourceClassifyProduct;
             loadProduct();
             addProductBinding();
             loadClassifies();
@@ -268,7 +270,7 @@ namespace WindowsForms.Presentation
 
         private void textBoxIdCombo_TextChanged(object sender, EventArgs e)
         {
-            if (!textBoxIdCombo.Text.Equals("0"))
+            if (!textBoxIdCombo.Text.Equals("0") && !textBoxIdCombo.Text.Equals(""))
             {
                 int idCombo = Convert.ToInt32(textBoxIdCombo.Text);
                 ComboDTO combo = service.getComboByID(idCombo);
@@ -353,6 +355,15 @@ namespace WindowsForms.Presentation
             classify.ClassifyDetail = classifyDetail;
             service.editClassify(classify);
             loadClassifies();
+        }
+
+        private void textBoxIdClassify_TextChanged(object sender, EventArgs e)
+        {
+            if (!textBoxIdClassify.Text.Equals("0") && !textBoxIdClassify.Text.Equals(""))
+            {
+                int idClassify = Convert.ToInt32(textBoxIdClassify.Text);
+                bindingSourceClassifyProduct.DataSource = service.getProductByIdClassify(idClassify);
+            }
         }
     }
 }
