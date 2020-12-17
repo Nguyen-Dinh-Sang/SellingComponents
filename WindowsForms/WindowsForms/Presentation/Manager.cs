@@ -70,6 +70,8 @@ namespace WindowsForms.Presentation
             bindingSourceCatalog.DataSource = service.getCatalogs();
             comboBoxCatalogCombo.DataSource = service.getCatalogs();
             comboBoxCatalogCombo.DisplayMember = "CatalogName";
+            comboBoxComboCatalog.DataSource = service.getCatalogs();
+            comboBoxComboCatalog.DisplayMember = "CatalogName";
         }
 
         private void addCatalogBinding()
@@ -89,7 +91,12 @@ namespace WindowsForms.Presentation
 
         private void addComboBingding()
         {
-
+            textBoxIdCombo.DataBindings.Add(new Binding("Text", dataGridViewCombo.DataSource, "Id", true, DataSourceUpdateMode.Never));
+            textBoxComboName.DataBindings.Add(new Binding("Text", dataGridViewCombo.DataSource, "ComboName", true, DataSourceUpdateMode.Never));
+            textBoxComboDetail.DataBindings.Add(new Binding("Text", dataGridViewCombo.DataSource, "ComboDetails", true, DataSourceUpdateMode.Never));
+            textBoxDateCreateCombo.DataBindings.Add(new Binding("Text", dataGridViewCombo.DataSource, "DateCreated", true, DataSourceUpdateMode.Never));
+            textBoxPriceCombo.DataBindings.Add(new Binding("Text", dataGridViewCombo.DataSource, "Price", true, DataSourceUpdateMode.Never));
+            textBoxTotalCostCombo.DataBindings.Add(new Binding("Text", dataGridViewCombo.DataSource, "TotalCost", true, DataSourceUpdateMode.Never));
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -222,6 +229,43 @@ namespace WindowsForms.Presentation
             catalog.CatalogName = catalogName;
             service.editCatalog(catalog);
             loadCatalog();
+        }
+
+        private void panel28_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonSearchCombo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxComboCatalog_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxIdCombo_TextChanged(object sender, EventArgs e)
+        {
+            if (!textBoxIdCombo.Text.Equals("0"))
+            {
+                int idCombo = Convert.ToInt32(textBoxIdCombo.Text);
+                ComboDTO combo = service.getComboByID(idCombo);
+
+                int index = -1;
+                int i = 0;
+                foreach (CatalogDTO item in comboBoxComboCatalog.Items)
+                {
+                    if (item.Id == combo.IdCatalog)
+                    {
+                        index = i;
+                        break;
+                    }
+                    i++;
+                }
+                comboBoxComboCatalog.SelectedIndex = index;
+            }
         }
     }
 }

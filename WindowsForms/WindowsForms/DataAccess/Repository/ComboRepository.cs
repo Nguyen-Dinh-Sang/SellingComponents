@@ -30,5 +30,10 @@ namespace WindowsForms.DataAccess.Repository
         {
             return sellingComponentsDBContext.Combos;
         }
+
+        public Combo getComboById(int id)
+        {
+            return sellingComponentsDBContext.Combos.Find(id);
+        }
     }
 }

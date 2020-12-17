@@ -11,7 +11,7 @@ namespace WindowsForms.Business.Service
 {
     public class ComboService
     {
-        private ComboRepository ComboRepository = ComboRepository.getInstance();
+        private ComboRepository comboRepository = ComboRepository.getInstance();
 
         private static ComboService instance;
 
@@ -34,7 +34,12 @@ namespace WindowsForms.Business.Service
 
         public List<ComboDTO> getCombos()
         {
-            return new List<ComboDTO>(mapper.Map<IEnumerable<Combo>, IEnumerable<ComboDTO>>(ComboRepository.getCombos()));
+            return new List<ComboDTO>(mapper.Map<IEnumerable<Combo>, IEnumerable<ComboDTO>>(comboRepository.getCombos()));
+        }
+
+        public ComboDTO getComboById(int id)
+        {
+            return mapper.Map<Combo, ComboDTO>(comboRepository.getComboById(id));
         }
     }
 }
