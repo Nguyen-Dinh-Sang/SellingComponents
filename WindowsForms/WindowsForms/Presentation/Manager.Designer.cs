@@ -122,9 +122,9 @@ namespace WindowsForms.Presentation
             this.label15 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonUpdateCombo = new System.Windows.Forms.Button();
+            this.buttonRemoveCombo = new System.Windows.Forms.Button();
+            this.buttonAddCombo = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
             this.textBoxSearchCombo = new System.Windows.Forms.TextBox();
             this.comboBoxCatalogCombo = new System.Windows.Forms.ComboBox();
@@ -157,6 +157,7 @@ namespace WindowsForms.Presentation
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.buttonDetailCombo = new System.Windows.Forms.Button();
             this.tabControlManager.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -1068,10 +1069,11 @@ namespace WindowsForms.Presentation
             // 
             // panel25
             // 
+            this.panel25.Controls.Add(this.buttonDetailCombo);
             this.panel25.Controls.Add(this.panel26);
-            this.panel25.Controls.Add(this.button1);
-            this.panel25.Controls.Add(this.button3);
-            this.panel25.Controls.Add(this.button4);
+            this.panel25.Controls.Add(this.buttonUpdateCombo);
+            this.panel25.Controls.Add(this.buttonRemoveCombo);
+            this.panel25.Controls.Add(this.buttonAddCombo);
             this.panel25.Location = new System.Drawing.Point(487, 391);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(450, 77);
@@ -1084,32 +1086,32 @@ namespace WindowsForms.Presentation
             this.panel26.Size = new System.Drawing.Size(450, 248);
             this.panel26.TabIndex = 7;
             // 
-            // button1
+            // buttonUpdateCombo
             // 
-            this.button1.Location = new System.Drawing.Point(325, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Sửa";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonUpdateCombo.Location = new System.Drawing.Point(230, 21);
+            this.buttonUpdateCombo.Name = "buttonUpdateCombo";
+            this.buttonUpdateCombo.Size = new System.Drawing.Size(100, 36);
+            this.buttonUpdateCombo.TabIndex = 2;
+            this.buttonUpdateCombo.Text = "Sửa";
+            this.buttonUpdateCombo.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonRemoveCombo
             // 
-            this.button3.Location = new System.Drawing.Point(178, 21);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 36);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonRemoveCombo.Location = new System.Drawing.Point(118, 21);
+            this.buttonRemoveCombo.Name = "buttonRemoveCombo";
+            this.buttonRemoveCombo.Size = new System.Drawing.Size(100, 36);
+            this.buttonRemoveCombo.TabIndex = 1;
+            this.buttonRemoveCombo.Text = "Xóa";
+            this.buttonRemoveCombo.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonAddCombo
             // 
-            this.button4.Location = new System.Drawing.Point(27, 21);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 36);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Thêm";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonAddCombo.Location = new System.Drawing.Point(6, 21);
+            this.buttonAddCombo.Name = "buttonAddCombo";
+            this.buttonAddCombo.Size = new System.Drawing.Size(100, 36);
+            this.buttonAddCombo.TabIndex = 0;
+            this.buttonAddCombo.Text = "Thêm";
+            this.buttonAddCombo.UseVisualStyleBackColor = true;
             // 
             // panel19
             // 
@@ -1403,6 +1405,15 @@ namespace WindowsForms.Presentation
             this.tabPage7.Text = "Thông Tin Tài Khoản";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // buttonDetailCombo
+            // 
+            this.buttonDetailCombo.Location = new System.Drawing.Point(343, 21);
+            this.buttonDetailCombo.Name = "buttonDetailCombo";
+            this.buttonDetailCombo.Size = new System.Drawing.Size(100, 36);
+            this.buttonDetailCombo.TabIndex = 8;
+            this.buttonDetailCombo.Text = "Chi Tiết";
+            this.buttonDetailCombo.UseVisualStyleBackColor = true;
+            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1578,9 +1589,9 @@ namespace WindowsForms.Presentation
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonUpdateCombo;
+        private System.Windows.Forms.Button buttonRemoveCombo;
+        private System.Windows.Forms.Button buttonAddCombo;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.TextBox textBoxComboDetail;
         private System.Windows.Forms.Label label11;
@@ -1633,5 +1644,6 @@ namespace WindowsForms.Presentation
         private System.Windows.Forms.TextBox textBoxIdClassify;
         private System.Windows.Forms.TextBox textBoxSearchClassify;
         private System.Windows.Forms.Button buttonSearchClassify;
+        private System.Windows.Forms.Button buttonDetailCombo;
     }
 }
