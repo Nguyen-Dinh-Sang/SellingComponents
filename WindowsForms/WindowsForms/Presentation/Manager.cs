@@ -38,6 +38,7 @@ namespace WindowsForms.Presentation
             loadCatalog();
             addCatalogBinding();
             loadCombo();
+            addComboBingding();
         }
 
         private void loadProduct()
@@ -84,6 +85,11 @@ namespace WindowsForms.Presentation
             dataGridViewCombo.DataSource = service.getCombos();
             comboBoxComBo.DataSource = service.getCombos();
             comboBoxComBo.DisplayMember = "ComboName";
+        }
+
+        private void addComboBingding()
+        {
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
