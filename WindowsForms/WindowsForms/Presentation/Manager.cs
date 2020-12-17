@@ -20,6 +20,7 @@ namespace WindowsForms.Presentation
         private BindingSource bindingSourceCatalog = new BindingSource();
         private BindingSource bindingSourceCombo = new BindingSource();
         private BindingSource bindingSourceClassify = new BindingSource();
+        private BindingSource bindingSourceClassifyProduct = new BindingSource();
 
         public Manager(String username)
         {
@@ -34,6 +35,7 @@ namespace WindowsForms.Presentation
             dataGridViewCatalog.DataSource = bindingSourceCatalog;
             dataGridViewCombo.DataSource = bindingSourceCombo;
             dataGridViewClassify.DataSource = bindingSourceClassify;
+            dataGridViewClassifyProduct.DataSource = bindingSourceClassifyProduct;
             loadProduct();
             addProductBinding();
             loadClassifies();
@@ -268,7 +270,7 @@ namespace WindowsForms.Presentation
 
         private void textBoxIdCombo_TextChanged(object sender, EventArgs e)
         {
-            if (!textBoxIdCombo.Text.Equals("0"))
+            if (!textBoxIdCombo.Text.Equals("0") && !textBoxIdCombo.Text.Equals(""))
             {
                 int idCombo = Convert.ToInt32(textBoxIdCombo.Text);
                 ComboDTO combo = service.getComboByID(idCombo);
@@ -290,7 +292,15 @@ namespace WindowsForms.Presentation
 
         private void buttonSearchClassify_Click(object sender, EventArgs e)
         {
-
+            string searchValue = textBoxSearchClassify.Text;
+            if (searchValue.Equals(""))
+            {
+                bindingSourceClassify.DataSource = service.getClassifies();
+            }
+            else
+            {
+                bindingSourceClassify.DataSource = service.getClassifyBySearchString(searchValue);
+            }
         }
 
         private void comboBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
@@ -314,6 +324,46 @@ namespace WindowsForms.Presentation
         {
             int idClassify = (comboBoxClassify.SelectedItem as ClassifyDTO).Id;
             bindingSourceProduct.DataSource = service.getProductByIdClassify(idClassify);
+        }
+
+        private void buttonCreateClassify_Click(object sender, EventArgs e)
+        {
+            string classifyName = textBoxClassifyName.Text;
+            string classifyDetail = textBoxClassifyDetail.Text;
+            ClassifyDTO classify = new ClassifyDTO();
+            classify.ClassifyName = classifyName;
+            classify.ClassifyDetail = classifyDetail;
+            service.createClassify(classify);
+            loadClassifies();
+        }
+
+        private void buttonDeleteClassify_Click(object sender, EventArgs e)
+        {
+            int idClassify = Convert.ToInt32(textBoxIdClassify.Text);
+            service.deleteClassify(idClassify);
+            loadClassifies();
+        }
+
+        private void buttonEditClassify_Click(object sender, EventArgs e)
+        {
+            int classifyId = Convert.ToInt32(textBoxIdClassify.Text);
+            string classifyName = textBoxClassifyName.Text;
+            string classifyDetail = textBoxClassifyDetail.Text;
+            ClassifyDTO classify = new ClassifyDTO();
+            classify.Id = classifyId;
+            classify.ClassifyName = classifyName;
+            classify.ClassifyDetail = classifyDetail;
+            service.editClassify(classify);
+            loadClassifies();
+        }
+
+        private void textBoxIdClassify_TextChanged(object sender, EventArgs e)
+        {
+            if (!textBoxIdClassify.Text.Equals("0") && !textBoxIdClassify.Text.Equals(""))
+            {
+                int idClassify = Convert.ToInt32(textBoxIdClassify.Text);
+                bindingSourceClassifyProduct.DataSource = service.getProductByIdClassify(idClassify);
+            }
         }
     }
 }
