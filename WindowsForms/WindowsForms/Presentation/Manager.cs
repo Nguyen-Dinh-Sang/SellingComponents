@@ -301,7 +301,8 @@ namespace WindowsForms.Presentation
 
         private void comboBoxComBo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int idCombo = (comboBoxComBo.SelectedItem as ComboDTO).Id;
+            bindingSourceProduct.DataSource = service.getProductByIdCombo(idCombo);
         }
 
         private void comboBoxCatalog_SelectedValueChanged(object sender, EventArgs e)

@@ -80,9 +80,21 @@ namespace WindowsForms.DataAccess.Repository
                                 where p.ProductName.Contains(searchValue) ||
                                       p.Detail.Contains(searchValue)
                                 select p);
+
             return queryProduct;
         }
 
+        public IEnumerable<Product> getProductByIdCombo(int idCombo)
+        {
+            var queryComboDetail = (from cbd in sellingComponentsDBContext.ComboDetails
+                                    where cbd.IdCombo == idCombo
+                                    select cbd);
 
+            var queryProduct = (from cbd in queryComboDetail
+                                join p in sellingComponentsDBContext.Products on cbd.IdProduct equals p.Id
+                                select p);
+
+            return queryProduct;
+        }
     }
 }
