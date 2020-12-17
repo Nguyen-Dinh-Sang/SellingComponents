@@ -52,5 +52,26 @@ namespace WindowsForms.DataAccess.Repository
 
             return queryClassify;
         }
+
+        public void create(Classify classify)
+        {
+            sellingComponentsDBContext.Add(classify);
+            sellingComponentsDBContext.SaveChanges();
+        }
+
+        public void edit(Classify classify)
+        {
+            var c = sellingComponentsDBContext.Classifies.Find(classify.Id);
+            c.ClassifyName = classify.ClassifyName;
+            c.ClassifyDetail = classify.ClassifyDetail;
+            sellingComponentsDBContext.SaveChanges();
+        }
+
+        public void delete(int id)
+        {
+            var classify = sellingComponentsDBContext.Classifies.Find(id);
+            sellingComponentsDBContext.Classifies.Remove(classify);
+            sellingComponentsDBContext.SaveChanges();
+        }
     }
 }

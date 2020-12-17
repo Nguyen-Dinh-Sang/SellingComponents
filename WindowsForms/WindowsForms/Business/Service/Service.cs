@@ -112,5 +112,20 @@ namespace WindowsForms.Business.Service
         {
             return classifyService.getClassifyBySearchString(searchValue);
         }
+
+        public void createClassify(ClassifyDTO classify)
+        {
+            classifyService.create(classify);
+        }
+
+        public void editClassify(ClassifyDTO classify)
+        {
+            classifyService.edit(classify);
+        }
+
+        public void deleteClassify(int id)
+        {
+            classifyService.delete(id);
+        }
     }
 }

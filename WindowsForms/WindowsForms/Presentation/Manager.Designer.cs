@@ -75,9 +75,9 @@ namespace WindowsForms.Presentation
             this.label20 = new System.Windows.Forms.Label();
             this.panel37 = new System.Windows.Forms.Panel();
             this.panel38 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonEditClassify = new System.Windows.Forms.Button();
+            this.buttonDeleteClassify = new System.Windows.Forms.Button();
+            this.buttonCreateClassify = new System.Windows.Forms.Button();
             this.panel39 = new System.Windows.Forms.Panel();
             this.textBoxClassifyDetail = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -644,9 +644,9 @@ namespace WindowsForms.Presentation
             // panel37
             // 
             this.panel37.Controls.Add(this.panel38);
-            this.panel37.Controls.Add(this.button2);
-            this.panel37.Controls.Add(this.button5);
-            this.panel37.Controls.Add(this.button6);
+            this.panel37.Controls.Add(this.buttonEditClassify);
+            this.panel37.Controls.Add(this.buttonDeleteClassify);
+            this.panel37.Controls.Add(this.buttonCreateClassify);
             this.panel37.Location = new System.Drawing.Point(0, 163);
             this.panel37.Name = "panel37";
             this.panel37.Size = new System.Drawing.Size(450, 77);
@@ -659,32 +659,35 @@ namespace WindowsForms.Presentation
             this.panel38.Size = new System.Drawing.Size(450, 248);
             this.panel38.TabIndex = 7;
             // 
-            // button2
+            // buttonEditClassify
             // 
-            this.button2.Location = new System.Drawing.Point(325, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 36);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonEditClassify.Location = new System.Drawing.Point(325, 21);
+            this.buttonEditClassify.Name = "buttonEditClassify";
+            this.buttonEditClassify.Size = new System.Drawing.Size(100, 36);
+            this.buttonEditClassify.TabIndex = 2;
+            this.buttonEditClassify.Text = "Sửa";
+            this.buttonEditClassify.UseVisualStyleBackColor = true;
+            this.buttonEditClassify.Click += new System.EventHandler(this.buttonEditClassify_Click);
             // 
-            // button5
+            // buttonDeleteClassify
             // 
-            this.button5.Location = new System.Drawing.Point(178, 21);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 36);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Xóa";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonDeleteClassify.Location = new System.Drawing.Point(178, 21);
+            this.buttonDeleteClassify.Name = "buttonDeleteClassify";
+            this.buttonDeleteClassify.Size = new System.Drawing.Size(100, 36);
+            this.buttonDeleteClassify.TabIndex = 1;
+            this.buttonDeleteClassify.Text = "Xóa";
+            this.buttonDeleteClassify.UseVisualStyleBackColor = true;
+            this.buttonDeleteClassify.Click += new System.EventHandler(this.buttonDeleteClassify_Click);
             // 
-            // button6
+            // buttonCreateClassify
             // 
-            this.button6.Location = new System.Drawing.Point(27, 21);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 36);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Thêm";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonCreateClassify.Location = new System.Drawing.Point(27, 21);
+            this.buttonCreateClassify.Name = "buttonCreateClassify";
+            this.buttonCreateClassify.Size = new System.Drawing.Size(100, 36);
+            this.buttonCreateClassify.TabIndex = 0;
+            this.buttonCreateClassify.Text = "Thêm";
+            this.buttonCreateClassify.UseVisualStyleBackColor = true;
+            this.buttonCreateClassify.Click += new System.EventHandler(this.buttonCreateClassify_Click);
             // 
             // panel39
             // 
@@ -1603,9 +1606,9 @@ namespace WindowsForms.Presentation
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel37;
         private System.Windows.Forms.Panel panel38;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonEditClassify;
+        private System.Windows.Forms.Button buttonDeleteClassify;
+        private System.Windows.Forms.Button buttonCreateClassify;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label21;

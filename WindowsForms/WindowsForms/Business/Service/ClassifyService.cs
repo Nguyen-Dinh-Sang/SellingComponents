@@ -46,5 +46,20 @@ namespace WindowsForms.Business.Service
         {
             return new List<ClassifyDTO>(mapper.Map<IEnumerable<Classify>, IEnumerable<ClassifyDTO>>(classifyRepository.getClassifyBySearchString(searchValue)));
         }
+
+        public void create(ClassifyDTO classify)
+        {
+            classifyRepository.create(mapper.Map<ClassifyDTO, Classify>(classify));
+        }
+
+        public void edit(ClassifyDTO classify)
+        {
+            classifyRepository.edit(mapper.Map<ClassifyDTO, Classify>(classify));
+        }
+
+        public void delete(int id)
+        {
+            classifyRepository.delete(id);
+        }
     }
 }

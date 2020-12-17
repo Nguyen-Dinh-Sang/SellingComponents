@@ -323,5 +323,36 @@ namespace WindowsForms.Presentation
             int idClassify = (comboBoxClassify.SelectedItem as ClassifyDTO).Id;
             bindingSourceProduct.DataSource = service.getProductByIdClassify(idClassify);
         }
+
+        private void buttonCreateClassify_Click(object sender, EventArgs e)
+        {
+            string classifyName = textBoxClassifyName.Text;
+            string classifyDetail = textBoxClassifyDetail.Text;
+            ClassifyDTO classify = new ClassifyDTO();
+            classify.ClassifyName = classifyName;
+            classify.ClassifyDetail = classifyDetail;
+            service.createClassify(classify);
+            loadClassifies();
+        }
+
+        private void buttonDeleteClassify_Click(object sender, EventArgs e)
+        {
+            int idClassify = Convert.ToInt32(textBoxIdClassify.Text);
+            service.deleteClassify(idClassify);
+            loadClassifies();
+        }
+
+        private void buttonEditClassify_Click(object sender, EventArgs e)
+        {
+            int classifyId = Convert.ToInt32(textBoxIdClassify.Text);
+            string classifyName = textBoxClassifyName.Text;
+            string classifyDetail = textBoxClassifyDetail.Text;
+            ClassifyDTO classify = new ClassifyDTO();
+            classify.Id = classifyId;
+            classify.ClassifyName = classifyName;
+            classify.ClassifyDetail = classifyDetail;
+            service.editClassify(classify);
+            loadClassifies();
+        }
     }
 }
