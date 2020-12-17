@@ -537,6 +537,7 @@ namespace WindowsForms.Presentation
             this.comboBoxCatalog.Size = new System.Drawing.Size(164, 27);
             this.comboBoxCatalog.TabIndex = 3;
             this.comboBoxCatalog.Text = "Catalog";
+            this.comboBoxCatalog.SelectedIndexChanged += new System.EventHandler(this.comboBoxCatalog_SelectedIndexChanged);
             // 
             // comboBoxComBo
             // 

@@ -52,5 +52,10 @@ namespace WindowsForms.Business.Service
         {
             productRepository.delete(id);
         }
+
+        public List<ProductDTO> getProductsByIdCatalog(int idCatalog)
+        {
+            return new List<ProductDTO>(mapper.Map<IEnumerable<Product>, IEnumerable<ProductDTO>>(productRepository.getProductsByIdCatalog(idCatalog)));
+        }
     }
 }

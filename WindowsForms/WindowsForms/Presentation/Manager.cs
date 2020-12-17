@@ -90,7 +90,7 @@ namespace WindowsForms.Presentation
 
         private void loadCombo()
         {
-            dataGridViewCombo.DataSource = service.getCombos();
+            bindingSourceCombo.DataSource = service.getCombos();
             comboBoxComBo.DataSource = service.getCombos();
             comboBoxComBo.DisplayMember = "ComboName";
         }
@@ -142,13 +142,13 @@ namespace WindowsForms.Presentation
 
         private void dataGridViewProduct_SelectionChanged(object sender, EventArgs e)
         {
-            int r = dataGridViewProduct.CurrentCell.RowIndex + 1;
+            //int r = dataGridViewProduct.CurrentCell.RowIndex + 1;
 
         }
 
         private void textBoxId_TextChanged(object sender, EventArgs e)
         {
-            if (!textBoxId.Text.Equals("0"))
+            if (!textBoxId.Text.Equals("0") && !textBoxId.Text.Equals(""))
             {
                 int idProduct = Convert.ToInt32(textBoxId.Text);
                 ClassifyDTO classify = service.getClassifyByIdProduct(idProduct);
@@ -285,6 +285,12 @@ namespace WindowsForms.Presentation
         private void buttonSearchClassify_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBoxCatalog_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idCatalog = (comboBoxCatalog.SelectedItem as CatalogDTO).Id;
+            bindingSourceProduct.DataSource = service.getProductsByIdCatalog(idCatalog);
         }
     }
 }
