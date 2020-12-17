@@ -57,5 +57,10 @@ namespace WindowsForms.Business.Service
         {
             return new List<ProductDTO>(mapper.Map<IEnumerable<Product>, IEnumerable<ProductDTO>>(productRepository.getProductsByIdCatalog(idCatalog)));
         }
+
+        public List<ProductDTO> getProductBySearchString(string searchValue)
+        {
+            return new List<ProductDTO>(mapper.Map<IEnumerable<Product>, IEnumerable<ProductDTO>>(productRepository.getProductBySearchString(searchValue)));
+        }
     }
 }

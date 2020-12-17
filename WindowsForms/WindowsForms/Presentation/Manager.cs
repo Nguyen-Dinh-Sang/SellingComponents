@@ -132,7 +132,14 @@ namespace WindowsForms.Presentation
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-
+            string searchValue = textBoxSearch.Text;
+            if (searchValue.Equals(""))
+            {
+                bindingSourceProduct.DataSource = productService.getProducts();
+            } else
+            {
+                bindingSourceProduct.DataSource = service.getProductBySearchString(searchValue);
+            }
         }
 
         private void dataGridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -143,7 +150,6 @@ namespace WindowsForms.Presentation
         private void dataGridViewProduct_SelectionChanged(object sender, EventArgs e)
         {
             //int r = dataGridViewProduct.CurrentCell.RowIndex + 1;
-
         }
 
         private void textBoxId_TextChanged(object sender, EventArgs e)
@@ -291,6 +297,16 @@ namespace WindowsForms.Presentation
         {
             int idCatalog = (comboBoxCatalog.SelectedItem as CatalogDTO).Id;
             bindingSourceProduct.DataSource = service.getProductsByIdCatalog(idCatalog);
+        }
+
+        private void comboBoxComBo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxCatalog_SelectedValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

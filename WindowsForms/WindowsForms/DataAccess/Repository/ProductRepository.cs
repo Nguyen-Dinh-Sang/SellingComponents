@@ -73,5 +73,16 @@ namespace WindowsForms.DataAccess.Repository
 
             return queryProduct;
         }
+
+        public IEnumerable<Product> getProductBySearchString(string searchValue)
+        {
+            var queryProduct = (from p in sellingComponentsDBContext.Products
+                                where p.ProductName.Contains(searchValue) ||
+                                      p.Detail.Contains(searchValue)
+                                select p);
+            return queryProduct;
+        }
+
+
     }
 }
