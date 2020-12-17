@@ -87,5 +87,25 @@ namespace WindowsForms.Business.Service
         {
             return comboService.getComboById(id);
         }
+
+        public List<ProductDTO> getProductsByIdCatalog(int idCatalog)
+        {
+            return productService.getProductsByIdCatalog(idCatalog);
+        }
+
+        public List<ProductDTO> getProductBySearchString(string searchValue)
+        {
+            return productService.getProductBySearchString(searchValue);
+        }
+
+        public List<ProductDTO> getProductByIdCombo(int idCombo)
+        {
+            return productService.getProductByIdCombo(idCombo);
+        }
+
+        public List<ProductDTO> getProductByIdClassify(int idClassify)
+        {
+            return productService.getProductByIdClassify(idClassify);
+        }
     }
 }

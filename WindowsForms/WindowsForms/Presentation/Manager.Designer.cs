@@ -528,6 +528,7 @@ namespace WindowsForms.Presentation
             this.comboBoxClassify.Size = new System.Drawing.Size(164, 27);
             this.comboBoxClassify.TabIndex = 4;
             this.comboBoxClassify.Text = "Loại";
+            this.comboBoxClassify.SelectedIndexChanged += new System.EventHandler(this.comboBoxClassify_SelectedIndexChanged);
             // 
             // comboBoxCatalog
             // 
@@ -537,6 +538,8 @@ namespace WindowsForms.Presentation
             this.comboBoxCatalog.Size = new System.Drawing.Size(164, 27);
             this.comboBoxCatalog.TabIndex = 3;
             this.comboBoxCatalog.Text = "Catalog";
+            this.comboBoxCatalog.SelectedIndexChanged += new System.EventHandler(this.comboBoxCatalog_SelectedIndexChanged);
+            this.comboBoxCatalog.SelectedValueChanged += new System.EventHandler(this.comboBoxCatalog_SelectedValueChanged);
             // 
             // comboBoxComBo
             // 
@@ -546,6 +549,7 @@ namespace WindowsForms.Presentation
             this.comboBoxComBo.Size = new System.Drawing.Size(164, 27);
             this.comboBoxComBo.TabIndex = 2;
             this.comboBoxComBo.Text = "Combo";
+            this.comboBoxComBo.SelectedIndexChanged += new System.EventHandler(this.comboBoxComBo_SelectedIndexChanged);
             // 
             // buttonSearch
             // 

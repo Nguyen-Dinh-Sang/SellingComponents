@@ -55,5 +55,55 @@ namespace WindowsForms.DataAccess.Repository
             sellingComponentsDBContext.Products.Remove(product);
             sellingComponentsDBContext.SaveChanges();
         }
+
+        public IEnumerable<Product> getProductsByIdCatalog(int idCatalog)
+        {
+            var queryComboByIdCatalog = (from cb in sellingComponentsDBContext.Combos
+                                         where cb.IdCatalog == idCatalog
+                                         select cb);
+
+            var queryComboDetaltByIdCombo = (from cbd in sellingComponentsDBContext.ComboDetails
+                                             where (from cb in queryComboByIdCatalog
+                                                    select cb.Id).Contains(cbd.IdCombo)
+                                             select cbd);
+
+            var queryProduct = (from cbd in queryComboDetaltByIdCombo
+                                join p in sellingComponentsDBContext.Products on cbd.IdProduct equals p.Id
+                                select p);
+
+            return queryProduct;
+        }
+
+        public IEnumerable<Product> getProductBySearchString(string searchValue)
+        {
+            var queryProduct = (from p in sellingComponentsDBContext.Products
+                                where p.ProductName.Contains(searchValue) ||
+                                      p.Detail.Contains(searchValue)
+                                select p);
+
+            return queryProduct;
+        }
+
+        public IEnumerable<Product> getProductByIdCombo(int idCombo)
+        {
+            var queryComboDetail = (from cbd in sellingComponentsDBContext.ComboDetails
+                                    where cbd.IdCombo == idCombo
+                                    select cbd);
+
+            var queryProduct = (from cbd in queryComboDetail
+                                join p in sellingComponentsDBContext.Products on cbd.IdProduct equals p.Id
+                                select p);
+
+            return queryProduct;
+        }
+
+        public IEnumerable<Product> getProductByIdClassify(int idClassify)
+        {
+            var queryProduct = (from p in sellingComponentsDBContext.Products
+                                where p.IdClassify == idClassify
+                                select p);
+
+            return queryProduct;
+        }
     }
 }
