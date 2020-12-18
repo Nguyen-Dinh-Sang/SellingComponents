@@ -9,6 +9,7 @@ namespace WebApplication.Models
     {
         public UserInformation()
         {
+            Carts = new HashSet<Cart>();
             Orders = new HashSet<Order>();
         }
 
@@ -25,6 +26,7 @@ namespace WebApplication.Models
         public int IdRole { get; set; }
 
         public virtual Role IdRoleNavigation { get; set; }
+        public virtual ICollection<Cart> Carts { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

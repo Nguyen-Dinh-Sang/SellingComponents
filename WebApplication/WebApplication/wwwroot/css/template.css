@@ -62,9 +62,9 @@
 }
 
 .contain_sanpham {
-    width: 80%;
+    width: 78%;
     float: left;
-    
+    margin-left:10px;
 }
 
 .contain_menu_danhmuc {
@@ -95,12 +95,14 @@
     border-radius: 10px;
     border: none;
     height: 30px;
+    font-size:17px;
 }
 #btn_muangay {
     background-color: #FF0000;
     border-radius: 10px;
     border: none;
     height: 30px;
+    font-size: 17px;
 }
 .footer {
     width: 100%;

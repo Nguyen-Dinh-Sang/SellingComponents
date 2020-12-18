@@ -9,6 +9,7 @@ namespace WebApplication.Models
     {
         public Combo()
         {
+            Carts = new HashSet<Cart>();
             ComboDetailsNavigation = new HashSet<ComboDetail>();
             OrdersDetails = new HashSet<OrdersDetail>();
         }
@@ -22,6 +23,7 @@ namespace WebApplication.Models
         public DateTime? DateCreated { get; set; }
 
         public virtual Catalog IdCatalogNavigation { get; set; }
+        public virtual ICollection<Cart> Carts { get; set; }
         public virtual ICollection<ComboDetail> ComboDetailsNavigation { get; set; }
         public virtual ICollection<OrdersDetail> OrdersDetails { get; set; }
     }

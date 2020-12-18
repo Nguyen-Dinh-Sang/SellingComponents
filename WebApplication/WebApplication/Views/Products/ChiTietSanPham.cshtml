@@ -57,62 +57,35 @@
 
         </div>
         <div class="contain_sanpham">
-            <h1>Danh sách sản phẩm:</h1>
+
+            <h1>Chi tiết sản phẩm</h1>
+
             @foreach (var item in Model)
             {
-                <div class="contain_1_sanpham">
-                    <a href="/Products/ChiTietSanPham?Id=@item.Id" style="text-decoration:none;color:black;">
-                        <div style="width: 100%;height: 80%">
-                            <div style="font-size:25px;">@item.ProductName</div>
-                            <div style="font-size:25px;">@item.Price </div>
-
-                        </div>
-                    </a>
-
+                <div style="font-size:25px">
+                    Tên sản phẩm : @item.ProductName
+                </div>
+                <div style="font-size:25px">
+                    Chi tiết sản phẩm : @item.Detail
+                </div>
+                <div style="font-size:25px">
+                    Loại : @item.IdClassifyNavigation.ClassifyName
+                </div>
+                <div style="font-size:25px">
+                    Giá : @item.Price
+                </div>
+                <div style="width:40%;">
                     <div class="contain_1_sanpham_themgiohang">
                         <div style="float: left;"><input type="button" name="btn_themgiohang" id="btn_themgiohang" value="Thêm vào giỏ hàng" onclick="ThemSP_GioHang(@item.Id,@ViewBag.IdUser)" /> </div>
                         <div style="float: right;"><input type="button" name="btn_muangay" id="btn_muangay" value="Mua ngay" onclick="SanPham_MuaNgay(@item.Id)" /> </div>
                     </div>
                 </div>
+
             }
-
-
 
 
         </div>
 
-
-        <div style="margin-left:20%;">
-            @{
-                double totalPages = ViewBag.TotalPages;
-                int PageNumber = ViewBag.PageNumber;
-                int Id = ViewBag.Id;
-                <div class="pagination" style="float:left">
-                    @if (totalPages != 0)
-                    {
-                        @if (totalPages != 1)
-                        {
-                            @if (PageNumber > 1)
-                            {
-                                @Html.ActionLink("<<<", "Index", new { Id = Id, searchString = ViewBag.searchString, PageNumber = PageNumber - 1 })
-                            }
-                            <label>@PageNumber</label>
-                            @if (PageNumber != totalPages)
-                            {
-                                @Html.ActionLink(">>>", "Index", new { Id = Id, searchString = ViewBag.searchString, PageNumber = PageNumber + 1 })
-                            }
-                        }
-                        else
-                        {
-                            <label>@PageNumber</label>
-                        }
-
-                    }
-
-                </div>
-
-            }
-        </div>
 
 
     </div>

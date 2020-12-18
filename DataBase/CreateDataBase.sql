@@ -159,6 +159,7 @@ CREATE TABLE Cart(
 	IdCombo INT,
 	IdProduct INT,
 	IdUser INT,
+	Amount INT,
 	CONSTRAINT Cart_UserInformation
 	FOREIGN KEY(IdUser)
 	REFERENCES UserInformation(Id)

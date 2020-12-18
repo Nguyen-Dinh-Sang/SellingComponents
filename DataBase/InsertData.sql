@@ -310,3 +310,5 @@ FROM ComboDetails
 
 SELECT *
 FROM OrdersDetails
+Select *
+from Cart

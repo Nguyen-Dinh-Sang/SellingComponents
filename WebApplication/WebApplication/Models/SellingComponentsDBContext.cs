@@ -17,6 +17,7 @@ namespace WebApplication.Models
         {
         }
 
+        public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Catalog> Catalogs { get; set; }
         public virtual DbSet<Classify> Classifies { get; set; }
         public virtual DbSet<Combo> Combos { get; set; }
@@ -39,6 +40,31 @@ namespace WebApplication.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+
+            modelBuilder.Entity<Cart>(entity =>
+            {
+                entity.ToTable("Cart");
+
+                entity.HasOne(d => d.IdComboNavigation)
+                    .WithMany(p => p.Carts)
+                    .HasForeignKey(d => d.IdCombo)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("Cart_Combo");
+
+                entity.HasOne(d => d.IdProductNavigation)
+                    .WithMany(p => p.Carts)
+                    .HasForeignKey(d => d.IdProduct)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("Cart_Product");
+
+                entity.HasOne(d => d.IdUserNavigation)
+                    .WithMany(p => p.Carts)
+                    .HasForeignKey(d => d.IdUser)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("Cart_UserInformation");
+            });
+
             modelBuilder.Entity<Catalog>(entity =>
             {
                 entity.ToTable("Catalog");
@@ -165,6 +191,8 @@ namespace WebApplication.Models
             modelBuilder.Entity<Product>(entity =>
             {
                 entity.ToTable("Product");
+
+                entity.Property(e => e.Amount).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.DateCreated)
                     .HasColumnType("date")
