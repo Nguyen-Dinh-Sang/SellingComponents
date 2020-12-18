@@ -152,5 +152,10 @@ namespace WindowsForms.Business.Service
         {
             comboService.delete(id);
         }
+
+        public List<CatalogDTO> getCatalogBySearchString(string searchValue)
+        {
+            return catalogService.getCatalogBySearchString(searchValue);
+        }
     }
 }

@@ -22,6 +22,7 @@ namespace WindowsForms.Presentation
         private BindingSource bindingSourceClassify = new BindingSource();
         private BindingSource bindingSourceClassifyProduct = new BindingSource();
         private BindingSource bindingSourceComboProduct = new BindingSource();
+        private BindingSource bindingSourceComboCatalog = new BindingSource();
 
         public Manager(String username)
         {
@@ -38,6 +39,7 @@ namespace WindowsForms.Presentation
             dataGridViewClassify.DataSource = bindingSourceClassify;
             dataGridViewClassifyProduct.DataSource = bindingSourceClassifyProduct;
             dataGridViewProductComBo.DataSource = bindingSourceComboProduct;
+            dataGridViewDetailCatalog.DataSource = bindingSourceComboCatalog;
             loadProduct();
             addProductBinding();
             loadClassifies();
@@ -426,6 +428,28 @@ namespace WindowsForms.Presentation
             combo.IdCatalog = idCatalog;
             service.editCombo(combo);
             loadCombo();
+        }
+
+        private void textBoxIdCatalog_TextChanged(object sender, EventArgs e)
+        {
+            if (!textBoxIdCatalog.Text.Equals("0") && !textBoxIdCatalog.Text.Equals(""))
+            {
+                int idCombo = Convert.ToInt32(textBoxIdCatalog.Text);
+                bindingSourceComboCatalog.DataSource = service.getCombosByIdCatalog(idCombo);
+            }
+        }
+
+        private void buttonSearchCatalog_Click(object sender, EventArgs e)
+        {
+            string searchValue = textBoxSearchCatalog.Text;
+            if (searchValue.Equals(""))
+            {
+                bindingSourceCatalog.DataSource = service.getCatalogs();
+            }
+            else
+            {
+                bindingSourceCatalog.DataSource = service.getCatalogBySearchString(searchValue);
+            }
         }
     }
 }

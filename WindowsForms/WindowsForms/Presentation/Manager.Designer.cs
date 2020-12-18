@@ -264,9 +264,12 @@ namespace WindowsForms.Presentation
             // 
             // dataGridViewDetailCatalog
             // 
+            this.dataGridViewDetailCatalog.AllowUserToAddRows = false;
+            this.dataGridViewDetailCatalog.AllowUserToDeleteRows = false;
             this.dataGridViewDetailCatalog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDetailCatalog.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewDetailCatalog.Name = "dataGridViewDetailCatalog";
+            this.dataGridViewDetailCatalog.ReadOnly = true;
             this.dataGridViewDetailCatalog.RowTemplate.Height = 25;
             this.dataGridViewDetailCatalog.Size = new System.Drawing.Size(450, 247);
             this.dataGridViewDetailCatalog.TabIndex = 0;
@@ -434,6 +437,7 @@ namespace WindowsForms.Presentation
             this.textBoxIdCatalog.Name = "textBoxIdCatalog";
             this.textBoxIdCatalog.Size = new System.Drawing.Size(314, 26);
             this.textBoxIdCatalog.TabIndex = 1;
+            this.textBoxIdCatalog.TextChanged += new System.EventHandler(this.textBoxIdCatalog_TextChanged);
             // 
             // label14
             // 
@@ -468,6 +472,7 @@ namespace WindowsForms.Presentation
             this.buttonSearchCatalog.TabIndex = 1;
             this.buttonSearchCatalog.Text = "Tìm Kiếm";
             this.buttonSearchCatalog.UseVisualStyleBackColor = true;
+            this.buttonSearchCatalog.Click += new System.EventHandler(this.buttonSearchCatalog_Click);
             // 
             // tabPage3
             // 

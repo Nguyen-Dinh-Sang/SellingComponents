@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using WindowsForms.DataAccess.Context;
 using WindowsForms.DataAccess.Entity;
+using System.Linq;
 
 namespace WindowsForms.DataAccess.Repository
 {
@@ -50,6 +51,15 @@ namespace WindowsForms.DataAccess.Repository
             var catalog = sellingComponentsDBContext.Catalogs.Find(id);
             sellingComponentsDBContext.Catalogs.Remove(catalog);
             sellingComponentsDBContext.SaveChanges();
+        }
+        
+        public IEnumerable<Catalog> getCatalogBySearchString(string searchValue)
+        {
+            var query = (from c in sellingComponentsDBContext.Catalogs
+                         where c.CatalogName.Contains(searchValue) || c.CatalogDetails.Contains(searchValue)
+                         select c);
+
+            return query;
         }
     }
 }
