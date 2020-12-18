@@ -41,6 +41,10 @@ namespace WindowsForms.Business.Service
         {
             return mapper.Map<Warehouse, WareHouseDTO>(wareHouseRepository.getWareHouseById(id));
         }
-
+     
+        public List<WareHouseDTO> getWareHouseBySearchString(string searchValue)
+        {
+            return new List<WareHouseDTO>(mapper.Map<IEnumerable<Warehouse>, IEnumerable<WareHouseDTO>>(wareHouseRepository.getWareHouseBySearchString(searchValue)));
+        }
     }
 }

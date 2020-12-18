@@ -471,7 +471,15 @@ namespace WindowsForms.Presentation
 
         private void buttonSearchWareHouse_Click(object sender, EventArgs e)
         {
-
+            string searchValue = textBoxSearchWareHouse.Text;
+            if (searchValue.Equals(""))
+            {
+                bindingSourceWareHouse.DataSource = service.getWareHouses();
+            }
+            else
+            {
+                bindingSourceWareHouse.DataSource = service.getWareHouseBySearchString(searchValue);
+            }
         }
 
         private void textBoxIdWareHouse_TextChanged(object sender, EventArgs e)
