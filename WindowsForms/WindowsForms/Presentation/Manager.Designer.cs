@@ -501,9 +501,12 @@ namespace WindowsForms.Presentation
             // 
             // dataGridViewProductComBo
             // 
+            this.dataGridViewProductComBo.AllowUserToAddRows = false;
+            this.dataGridViewProductComBo.AllowUserToDeleteRows = false;
             this.dataGridViewProductComBo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductComBo.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewProductComBo.Name = "dataGridViewProductComBo";
+            this.dataGridViewProductComBo.ReadOnly = true;
             this.dataGridViewProductComBo.RowTemplate.Height = 25;
             this.dataGridViewProductComBo.Size = new System.Drawing.Size(450, 127);
             this.dataGridViewProductComBo.TabIndex = 0;

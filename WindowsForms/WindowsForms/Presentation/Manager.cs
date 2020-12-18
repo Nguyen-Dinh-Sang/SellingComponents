@@ -21,6 +21,7 @@ namespace WindowsForms.Presentation
         private BindingSource bindingSourceCombo = new BindingSource();
         private BindingSource bindingSourceClassify = new BindingSource();
         private BindingSource bindingSourceClassifyProduct = new BindingSource();
+        private BindingSource bindingSourceComboProduct = new BindingSource();
 
         public Manager(String username)
         {
@@ -36,6 +37,7 @@ namespace WindowsForms.Presentation
             dataGridViewCombo.DataSource = bindingSourceCombo;
             dataGridViewClassify.DataSource = bindingSourceClassify;
             dataGridViewClassifyProduct.DataSource = bindingSourceClassifyProduct;
+            dataGridViewProductComBo.DataSource = bindingSourceComboProduct;
             loadProduct();
             addProductBinding();
             loadClassifies();
@@ -282,7 +284,7 @@ namespace WindowsForms.Presentation
             {
                 int idCombo = Convert.ToInt32(textBoxIdCombo.Text);
                 ComboDTO combo = service.getComboByID(idCombo);
-
+                bindingSourceComboProduct.DataSource = service.getProductByIdCombo(idCombo);
                 int index = -1;
                 int i = 0;
                 foreach (CatalogDTO item in comboBoxComboCatalog.Items)
