@@ -365,5 +365,16 @@ namespace WindowsForms.Presentation
                 bindingSourceClassifyProduct.DataSource = service.getProductByIdClassify(idClassify);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxCatalogCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idCatalog = (comboBoxCatalogCombo.SelectedItem as CatalogDTO).Id;
+            bindingSourceCombo.DataSource = service.getCombosByIdCatalog(idCatalog);
+        }
     }
 }

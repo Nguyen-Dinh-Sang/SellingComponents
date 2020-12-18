@@ -41,5 +41,10 @@ namespace WindowsForms.Business.Service
         {
             return mapper.Map<Combo, ComboDTO>(comboRepository.getComboById(id));
         }
+
+        public List<ComboDTO> getCombosByIdCatalog(int idCatalog)
+        {
+            return new List<ComboDTO>(mapper.Map<IEnumerable<Combo>, IEnumerable<ComboDTO>>(comboRepository.getCombosByIdCatalog(idCatalog)));
+        }
     }
 }
