@@ -984,6 +984,7 @@ namespace WindowsForms.Presentation
             this.buttonDetailCombo.TabIndex = 8;
             this.buttonDetailCombo.Text = "Chi Tiết";
             this.buttonDetailCombo.UseVisualStyleBackColor = true;
+            this.buttonDetailCombo.Click += new System.EventHandler(this.buttonDetailCombo_Click);
             // 
             // panel26
             // 

@@ -503,5 +503,12 @@ namespace WindowsForms.Presentation
                 comboBoxProductWareHouse.SelectedIndex = index;
             }
         }
+
+        private void buttonDetailCombo_Click(object sender, EventArgs e)
+        {
+            int idCombo = Convert.ToInt32(textBoxIdCombo.Text);
+            ComboDetail comboDetail = new ComboDetail(idCombo);
+            comboDetail.ShowDialog();
+        }
     }
 }
