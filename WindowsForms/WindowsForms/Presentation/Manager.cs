@@ -510,5 +510,17 @@ namespace WindowsForms.Presentation
             ComboDetail comboDetail = new ComboDetail(idCombo);
             comboDetail.ShowDialog();
         }
+
+        private void buttonAddWareHouse_Click(object sender, EventArgs e)
+        {
+            int idProduct = (comboBoxProductWareHouse.SelectedItem as ProductDTO).Id;
+            int amount = Convert.ToInt32(numericUpDownAmountWareHouse.Value);
+
+            WareHouseDTO wareHouseDTO = new WareHouseDTO();
+            wareHouseDTO.IdProduct = idProduct;
+            wareHouseDTO.Amount = amount;
+            service.addWareHouse(wareHouseDTO);
+            loadWareHouse();
+        }
     }
 }

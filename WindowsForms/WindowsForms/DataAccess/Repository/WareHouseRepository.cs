@@ -61,5 +61,13 @@ namespace WindowsForms.DataAccess.Repository
                 return queryWareHouseByProductName;
             }
         }
+
+        public void create(Warehouse warehouse)
+        {
+            sellingComponentsDBContext.Add(warehouse);
+            var pd = sellingComponentsDBContext.Products.Find(warehouse.IdProduct);
+            pd.Amount += warehouse.Amount;
+            sellingComponentsDBContext.SaveChanges();
+        }
     }
 }

@@ -174,5 +174,10 @@ namespace WindowsForms.Business.Service
         {
             return wareHoureService.getWareHouseBySearchString(searchValue);
         }
+
+        public void addWareHouse(WareHouseDTO wareHouse)
+        {
+            wareHoureService.create(wareHouse);
+        }
     }
 }

@@ -347,6 +347,7 @@ namespace WindowsForms.Presentation
             this.buttonAddWareHouse.TabIndex = 1;
             this.buttonAddWareHouse.Text = "Thêm";
             this.buttonAddWareHouse.UseVisualStyleBackColor = true;
+            this.buttonAddWareHouse.Click += new System.EventHandler(this.buttonAddWareHouse_Click);
             // 
             // panel48
             // 
@@ -365,9 +366,19 @@ namespace WindowsForms.Presentation
             0,
             0,
             0});
+            this.numericUpDownAmountWareHouse.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDownAmountWareHouse.Name = "numericUpDownAmountWareHouse";
             this.numericUpDownAmountWareHouse.Size = new System.Drawing.Size(314, 26);
             this.numericUpDownAmountWareHouse.TabIndex = 1;
+            this.numericUpDownAmountWareHouse.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label25
             // 
