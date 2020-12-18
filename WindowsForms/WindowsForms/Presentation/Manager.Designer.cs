@@ -32,6 +32,26 @@ namespace WindowsForms.Presentation
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dataGridViewWareHose = new System.Windows.Forms.DataGridView();
+            this.panel44 = new System.Windows.Forms.Panel();
+            this.panel45 = new System.Windows.Forms.Panel();
+            this.textBoxDateCreateWareHouse = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.panel46 = new System.Windows.Forms.Panel();
+            this.panel47 = new System.Windows.Forms.Panel();
+            this.buttonAddWareHouse = new System.Windows.Forms.Button();
+            this.panel48 = new System.Windows.Forms.Panel();
+            this.numericUpDownAmountWareHouse = new System.Windows.Forms.NumericUpDown();
+            this.label25 = new System.Windows.Forms.Label();
+            this.panel49 = new System.Windows.Forms.Panel();
+            this.comboBoxProductWareHouse = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.panel50 = new System.Windows.Forms.Panel();
+            this.textBoxIdWareHouse = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.panel51 = new System.Windows.Forms.Panel();
+            this.textBoxSearchWareHouse = new System.Windows.Forms.TextBox();
+            this.buttonSearchWareHouse = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel16 = new System.Windows.Forms.Panel();
             this.dataGridViewDetailCatalog = new System.Windows.Forms.DataGridView();
@@ -158,6 +178,16 @@ namespace WindowsForms.Presentation
             this.comboBoxComBo = new System.Windows.Forms.ComboBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.tabControlManager = new System.Windows.Forms.TabControl();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWareHose)).BeginInit();
+            this.panel44.SuspendLayout();
+            this.panel45.SuspendLayout();
+            this.panel46.SuspendLayout();
+            this.panel48.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmountWareHouse)).BeginInit();
+            this.panel49.SuspendLayout();
+            this.panel50.SuspendLayout();
+            this.panel51.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetailCatalog)).BeginInit();
@@ -233,12 +263,198 @@ namespace WindowsForms.Presentation
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.dataGridViewWareHose);
+            this.tabPage5.Controls.Add(this.panel44);
+            this.tabPage5.Controls.Add(this.panel51);
             this.tabPage5.Location = new System.Drawing.Point(4, 28);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(937, 597);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Nhập Kho";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewWareHose
+            // 
+            this.dataGridViewWareHose.AllowUserToAddRows = false;
+            this.dataGridViewWareHose.AllowUserToDeleteRows = false;
+            this.dataGridViewWareHose.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewWareHose.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewWareHose.Location = new System.Drawing.Point(0, 108);
+            this.dataGridViewWareHose.Name = "dataGridViewWareHose";
+            this.dataGridViewWareHose.ReadOnly = true;
+            this.dataGridViewWareHose.RowTemplate.Height = 25;
+            this.dataGridViewWareHose.Size = new System.Drawing.Size(486, 488);
+            this.dataGridViewWareHose.TabIndex = 10;
+            // 
+            // panel44
+            // 
+            this.panel44.Controls.Add(this.panel45);
+            this.panel44.Controls.Add(this.panel46);
+            this.panel44.Controls.Add(this.panel48);
+            this.panel44.Controls.Add(this.panel49);
+            this.panel44.Controls.Add(this.panel50);
+            this.panel44.Location = new System.Drawing.Point(487, 108);
+            this.panel44.Name = "panel44";
+            this.panel44.Size = new System.Drawing.Size(450, 241);
+            this.panel44.TabIndex = 9;
+            // 
+            // panel45
+            // 
+            this.panel45.Controls.Add(this.textBoxDateCreateWareHouse);
+            this.panel45.Controls.Add(this.label24);
+            this.panel45.Location = new System.Drawing.Point(6, 123);
+            this.panel45.Name = "panel45";
+            this.panel45.Size = new System.Drawing.Size(437, 42);
+            this.panel45.TabIndex = 7;
+            // 
+            // textBoxDateCreateWareHouse
+            // 
+            this.textBoxDateCreateWareHouse.Location = new System.Drawing.Point(123, 8);
+            this.textBoxDateCreateWareHouse.Name = "textBoxDateCreateWareHouse";
+            this.textBoxDateCreateWareHouse.Size = new System.Drawing.Size(314, 26);
+            this.textBoxDateCreateWareHouse.TabIndex = 1;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(0, 11);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(100, 19);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Ngày Nhập:";
+            // 
+            // panel46
+            // 
+            this.panel46.Controls.Add(this.panel47);
+            this.panel46.Controls.Add(this.buttonAddWareHouse);
+            this.panel46.Location = new System.Drawing.Point(0, 163);
+            this.panel46.Name = "panel46";
+            this.panel46.Size = new System.Drawing.Size(450, 77);
+            this.panel46.TabIndex = 5;
+            // 
+            // panel47
+            // 
+            this.panel47.Location = new System.Drawing.Point(0, 78);
+            this.panel47.Name = "panel47";
+            this.panel47.Size = new System.Drawing.Size(450, 248);
+            this.panel47.TabIndex = 7;
+            // 
+            // buttonAddWareHouse
+            // 
+            this.buttonAddWareHouse.Location = new System.Drawing.Point(178, 21);
+            this.buttonAddWareHouse.Name = "buttonAddWareHouse";
+            this.buttonAddWareHouse.Size = new System.Drawing.Size(100, 36);
+            this.buttonAddWareHouse.TabIndex = 1;
+            this.buttonAddWareHouse.Text = "Thêm";
+            this.buttonAddWareHouse.UseVisualStyleBackColor = true;
+            // 
+            // panel48
+            // 
+            this.panel48.Controls.Add(this.numericUpDownAmountWareHouse);
+            this.panel48.Controls.Add(this.label25);
+            this.panel48.Location = new System.Drawing.Point(6, 83);
+            this.panel48.Name = "panel48";
+            this.panel48.Size = new System.Drawing.Size(437, 42);
+            this.panel48.TabIndex = 5;
+            // 
+            // numericUpDownAmountWareHouse
+            // 
+            this.numericUpDownAmountWareHouse.Location = new System.Drawing.Point(123, 6);
+            this.numericUpDownAmountWareHouse.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownAmountWareHouse.Name = "numericUpDownAmountWareHouse";
+            this.numericUpDownAmountWareHouse.Size = new System.Drawing.Size(314, 26);
+            this.numericUpDownAmountWareHouse.TabIndex = 1;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(0, 11);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(93, 19);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Số Lượng:";
+            // 
+            // panel49
+            // 
+            this.panel49.Controls.Add(this.comboBoxProductWareHouse);
+            this.panel49.Controls.Add(this.label26);
+            this.panel49.Location = new System.Drawing.Point(6, 42);
+            this.panel49.Name = "panel49";
+            this.panel49.Size = new System.Drawing.Size(437, 42);
+            this.panel49.TabIndex = 2;
+            // 
+            // comboBoxProductWareHouse
+            // 
+            this.comboBoxProductWareHouse.FormattingEnabled = true;
+            this.comboBoxProductWareHouse.Location = new System.Drawing.Point(123, 8);
+            this.comboBoxProductWareHouse.Name = "comboBoxProductWareHouse";
+            this.comboBoxProductWareHouse.Size = new System.Drawing.Size(314, 27);
+            this.comboBoxProductWareHouse.TabIndex = 11;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(0, 11);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(76, 19);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Product:";
+            // 
+            // panel50
+            // 
+            this.panel50.Controls.Add(this.textBoxIdWareHouse);
+            this.panel50.Controls.Add(this.label27);
+            this.panel50.Location = new System.Drawing.Point(6, 2);
+            this.panel50.Name = "panel50";
+            this.panel50.Size = new System.Drawing.Size(437, 42);
+            this.panel50.TabIndex = 0;
+            // 
+            // textBoxIdWareHouse
+            // 
+            this.textBoxIdWareHouse.Location = new System.Drawing.Point(123, 8);
+            this.textBoxIdWareHouse.Name = "textBoxIdWareHouse";
+            this.textBoxIdWareHouse.Size = new System.Drawing.Size(314, 26);
+            this.textBoxIdWareHouse.TabIndex = 1;
+            this.textBoxIdWareHouse.TextChanged += new System.EventHandler(this.textBoxIdWareHouse_TextChanged);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(0, 11);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(31, 19);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "ID:";
+            // 
+            // panel51
+            // 
+            this.panel51.Controls.Add(this.textBoxSearchWareHouse);
+            this.panel51.Controls.Add(this.buttonSearchWareHouse);
+            this.panel51.Location = new System.Drawing.Point(0, 37);
+            this.panel51.Name = "panel51";
+            this.panel51.Size = new System.Drawing.Size(937, 37);
+            this.panel51.TabIndex = 8;
+            // 
+            // textBoxSearchWareHouse
+            // 
+            this.textBoxSearchWareHouse.Location = new System.Drawing.Point(35, 6);
+            this.textBoxSearchWareHouse.Name = "textBoxSearchWareHouse";
+            this.textBoxSearchWareHouse.Size = new System.Drawing.Size(744, 26);
+            this.textBoxSearchWareHouse.TabIndex = 5;
+            // 
+            // buttonSearchWareHouse
+            // 
+            this.buttonSearchWareHouse.Location = new System.Drawing.Point(801, 1);
+            this.buttonSearchWareHouse.Name = "buttonSearchWareHouse";
+            this.buttonSearchWareHouse.Size = new System.Drawing.Size(100, 36);
+            this.buttonSearchWareHouse.TabIndex = 1;
+            this.buttonSearchWareHouse.Text = "Tìm Kiếm";
+            this.buttonSearchWareHouse.UseVisualStyleBackColor = true;
+            this.buttonSearchWareHouse.Click += new System.EventHandler(this.buttonSearchWareHouse_Click);
             // 
             // tabPage4
             // 
@@ -1435,6 +1651,21 @@ namespace WindowsForms.Presentation
             this.Name = "Manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Website Linh Kiện";
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWareHose)).EndInit();
+            this.panel44.ResumeLayout(false);
+            this.panel45.ResumeLayout(false);
+            this.panel45.PerformLayout();
+            this.panel46.ResumeLayout(false);
+            this.panel48.ResumeLayout(false);
+            this.panel48.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAmountWareHouse)).EndInit();
+            this.panel49.ResumeLayout(false);
+            this.panel49.PerformLayout();
+            this.panel50.ResumeLayout(false);
+            this.panel50.PerformLayout();
+            this.panel51.ResumeLayout(false);
+            this.panel51.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetailCatalog)).EndInit();
@@ -1520,12 +1751,6 @@ namespace WindowsForms.Presentation
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage6;
@@ -1656,5 +1881,25 @@ namespace WindowsForms.Presentation
         private System.Windows.Forms.ComboBox comboBoxComBo;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.TabControl tabControlManager;
+        private System.Windows.Forms.DataGridView dataGridViewWareHose;
+        private System.Windows.Forms.Panel panel44;
+        private System.Windows.Forms.Panel panel45;
+        private System.Windows.Forms.TextBox textBoxDateCreateWareHouse;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel panel46;
+        private System.Windows.Forms.Panel panel47;
+        private System.Windows.Forms.Button buttonAddWareHouse;
+        private System.Windows.Forms.Panel panel48;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Panel panel49;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Panel panel50;
+        private System.Windows.Forms.TextBox textBoxIdWareHouse;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Panel panel51;
+        private System.Windows.Forms.TextBox textBoxSearchWareHouse;
+        private System.Windows.Forms.Button buttonSearchWareHouse;
+        private System.Windows.Forms.ComboBox comboBoxProductWareHouse;
+        private System.Windows.Forms.NumericUpDown numericUpDownAmountWareHouse;
     }
 }

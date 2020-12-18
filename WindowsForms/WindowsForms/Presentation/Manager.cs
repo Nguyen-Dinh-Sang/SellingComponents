@@ -23,6 +23,7 @@ namespace WindowsForms.Presentation
         private BindingSource bindingSourceClassifyProduct = new BindingSource();
         private BindingSource bindingSourceComboProduct = new BindingSource();
         private BindingSource bindingSourceComboCatalog = new BindingSource();
+        private BindingSource bindingSourceWareHouse = new BindingSource();
 
         public Manager(String username)
         {
@@ -40,6 +41,7 @@ namespace WindowsForms.Presentation
             dataGridViewClassifyProduct.DataSource = bindingSourceClassifyProduct;
             dataGridViewProductComBo.DataSource = bindingSourceComboProduct;
             dataGridViewDetailCatalog.DataSource = bindingSourceComboCatalog;
+            dataGridViewWareHose.DataSource = bindingSourceWareHouse;
             loadProduct();
             addProductBinding();
             loadClassifies();
@@ -48,11 +50,26 @@ namespace WindowsForms.Presentation
             loadCombo();
             addComboBinding();
             addClassifyBinding();
+            loadWareHouse();
+            addWareHouseBinding();
+        }
+        private void loadWareHouse()
+        {
+            bindingSourceWareHouse.DataSource = service.getWareHouses();
+        }
+
+        private void addWareHouseBinding()
+        {
+            textBoxIdWareHouse.DataBindings.Add(new Binding("Text", dataGridViewWareHose.DataSource, "Id", true, DataSourceUpdateMode.Never));
+            numericUpDownAmountWareHouse.DataBindings.Add(new Binding("Text", dataGridViewWareHose.DataSource, "Amount", true, DataSourceUpdateMode.Never));
+            textBoxDateCreateWareHouse.DataBindings.Add(new Binding("Text", dataGridViewWareHose.DataSource, "InputDate", true, DataSourceUpdateMode.Never));
         }
 
         private void loadProduct()
         {
             bindingSourceProduct.DataSource = productService.getProducts();
+            comboBoxProductWareHouse.DataSource = productService.getProducts();
+            comboBoxProductWareHouse.DisplayMember = "ProductName";
         }
 
         private void loadClassifies()
@@ -449,6 +466,41 @@ namespace WindowsForms.Presentation
             else
             {
                 bindingSourceCatalog.DataSource = service.getCatalogBySearchString(searchValue);
+            }
+        }
+
+        private void buttonSearchWareHouse_Click(object sender, EventArgs e)
+        {
+            string searchValue = textBoxSearchWareHouse.Text;
+            if (searchValue.Equals(""))
+            {
+                bindingSourceWareHouse.DataSource = service.getWareHouses();
+            }
+            else
+            {
+                bindingSourceWareHouse.DataSource = service.getWareHouseBySearchString(searchValue);
+            }
+        }
+
+        private void textBoxIdWareHouse_TextChanged(object sender, EventArgs e)
+        {
+            if (!textBoxIdWareHouse.Text.Equals("0") && !textBoxIdWareHouse.Text.Equals(""))
+            {
+                int idWareHouse = Convert.ToInt32(textBoxIdWareHouse.Text);
+                WareHouseDTO wareHouseDTO = service.getWareHouseById(idWareHouse);
+                
+                int index = -1;
+                int i = 0;
+                foreach (ProductDTO item in comboBoxProductWareHouse.Items)
+                {
+                    if (item.Id == wareHouseDTO.IdProduct)
+                    {
+                        index = i;
+                        break;
+                    }
+                    i++;
+                }
+                comboBoxProductWareHouse.SelectedIndex = index;
             }
         }
     }

@@ -16,6 +16,8 @@ namespace WindowsForms.Business.Service
 
         private ComboService comboService = ComboService.getInstance();
 
+        private WareHoureService wareHoureService = WareHoureService.getInstance();
+
         private static Service instance;
 
         private Service()
@@ -156,6 +158,21 @@ namespace WindowsForms.Business.Service
         public List<CatalogDTO> getCatalogBySearchString(string searchValue)
         {
             return catalogService.getCatalogBySearchString(searchValue);
+        }
+
+        public List<WareHouseDTO> getWareHouses()
+        {
+            return wareHoureService.getWareHouses();
+        }
+
+        public WareHouseDTO getWareHouseById(int id)
+        {
+            return wareHoureService.getWareHouseById(id);
+        }
+
+        public List<WareHouseDTO> getWareHouseBySearchString(string searchValue)
+        {
+            return wareHoureService.getWareHouseBySearchString(searchValue);
         }
     }
 }

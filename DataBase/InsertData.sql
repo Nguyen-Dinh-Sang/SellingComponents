@@ -89,28 +89,7 @@ VALUES(N'Audio', N'Loa, tai nghe...')
 GO
 
 
----Nhập hàng
-INSERT INTO Warehouse(IdProduct, Amount)
-VALUES(1, 10)
 
-INSERT INTO Warehouse(IdProduct, Amount)
-VALUES(2, 10)
-
-INSERT INTO Warehouse(IdProduct, Amount)
-VALUES(3, 10)
-
-INSERT INTO Warehouse(IdProduct, Amount)
-VALUES(4, 10)
-
-INSERT INTO Warehouse(IdProduct, Amount)
-VALUES(5, 10)
-
-INSERT INTO Warehouse(IdProduct, Amount)
-VALUES(6, 10)
-
-INSERT INTO Warehouse(IdProduct, Amount)
-VALUES(7, 10)
-GO
 
 ---Catalog
 INSERT INTO Catalog(CatalogName, CatalogDetails)
@@ -179,6 +158,28 @@ VALUES(N'Case XIGMATEK GEMINI', 10, 100000, N'Nhà sản xuất: Xigmatek', 9)
 
 GO
 
+---Nhập hàng
+INSERT INTO Warehouse(IdProduct, Amount)
+VALUES(1, 10)
+
+INSERT INTO Warehouse(IdProduct, Amount)
+VALUES(2, 10)
+
+INSERT INTO Warehouse(IdProduct, Amount)
+VALUES(3, 10)
+
+INSERT INTO Warehouse(IdProduct, Amount)
+VALUES(4, 10)
+
+INSERT INTO Warehouse(IdProduct, Amount)
+VALUES(5, 10)
+
+INSERT INTO Warehouse(IdProduct, Amount)
+VALUES(6, 10)
+
+INSERT INTO Warehouse(IdProduct, Amount)
+VALUES(7, 10)
+GO
 
 ---Combo
 -- combo của catalog 1
