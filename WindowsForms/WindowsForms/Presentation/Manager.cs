@@ -21,6 +21,8 @@ namespace WindowsForms.Presentation
         private BindingSource bindingSourceCombo = new BindingSource();
         private BindingSource bindingSourceClassify = new BindingSource();
         private BindingSource bindingSourceClassifyProduct = new BindingSource();
+        private BindingSource bindingSourceComboProduct = new BindingSource();
+        private BindingSource bindingSourceComboCatalog = new BindingSource();
 
         public Manager(String username)
         {
@@ -36,6 +38,8 @@ namespace WindowsForms.Presentation
             dataGridViewCombo.DataSource = bindingSourceCombo;
             dataGridViewClassify.DataSource = bindingSourceClassify;
             dataGridViewClassifyProduct.DataSource = bindingSourceClassifyProduct;
+            dataGridViewProductComBo.DataSource = bindingSourceComboProduct;
+            dataGridViewDetailCatalog.DataSource = bindingSourceComboCatalog;
             loadProduct();
             addProductBinding();
             loadClassifies();
@@ -260,7 +264,15 @@ namespace WindowsForms.Presentation
 
         private void buttonSearchCombo_Click(object sender, EventArgs e)
         {
-
+            string searchValue = textBoxSearchCombo.Text;
+            if (searchValue.Equals(""))
+            {
+                bindingSourceCombo.DataSource = service.getCombos();
+            }
+            else
+            {
+                bindingSourceCombo.DataSource = service.getComboBySearchString(searchValue);
+            }
         }
 
         private void comboBoxComboCatalog_SelectedIndexChanged(object sender, EventArgs e)
@@ -274,7 +286,7 @@ namespace WindowsForms.Presentation
             {
                 int idCombo = Convert.ToInt32(textBoxIdCombo.Text);
                 ComboDTO combo = service.getComboByID(idCombo);
-
+                bindingSourceComboProduct.DataSource = service.getProductByIdCombo(idCombo);
                 int index = -1;
                 int i = 0;
                 foreach (CatalogDTO item in comboBoxComboCatalog.Items)
@@ -363,6 +375,80 @@ namespace WindowsForms.Presentation
             {
                 int idClassify = Convert.ToInt32(textBoxIdClassify.Text);
                 bindingSourceClassifyProduct.DataSource = service.getProductByIdClassify(idClassify);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxCatalogCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idCatalog = (comboBoxCatalogCombo.SelectedItem as CatalogDTO).Id;
+            bindingSourceCombo.DataSource = service.getCombosByIdCatalog(idCatalog);
+        }
+
+        private void buttonAddCombo_Click(object sender, EventArgs e)
+        {
+            string comboName = textBoxComboName.Text;
+            decimal price = Convert.ToDecimal(textBoxPriceCombo.Text);
+            string detail = textBoxComboDetail.Text;
+            int idCatalog = (comboBoxComboCatalog.SelectedItem as CatalogDTO).Id;
+
+            ComboDTO combo = new ComboDTO();
+            combo.ComboName = comboName;
+            combo.ComboDetails = detail;
+            combo.Price = price;
+            combo.IdCatalog = idCatalog;
+            service.createCombo(combo);
+            loadCombo();
+        }
+
+        private void buttonRemoveCombo_Click(object sender, EventArgs e)
+        {
+            int idCombo = Convert.ToInt32(textBoxIdCombo.Text);
+            service.deleteCombo(idCombo);
+            loadCombo();
+        }
+
+        private void buttonUpdateCombo_Click(object sender, EventArgs e)
+        {
+            int idCombo = Convert.ToInt32(textBoxIdCombo.Text);
+            string comboName = textBoxComboName.Text;
+            decimal price = Convert.ToDecimal(textBoxPriceCombo.Text);
+            string detail = textBoxComboDetail.Text;
+            int idCatalog = (comboBoxComboCatalog.SelectedItem as CatalogDTO).Id;
+
+            ComboDTO combo = new ComboDTO();
+            combo.Id = idCombo;
+            combo.ComboName = comboName;
+            combo.ComboDetails = detail;
+            combo.Price = price;
+            combo.IdCatalog = idCatalog;
+            service.editCombo(combo);
+            loadCombo();
+        }
+
+        private void textBoxIdCatalog_TextChanged(object sender, EventArgs e)
+        {
+            if (!textBoxIdCatalog.Text.Equals("0") && !textBoxIdCatalog.Text.Equals(""))
+            {
+                int idCombo = Convert.ToInt32(textBoxIdCatalog.Text);
+                bindingSourceComboCatalog.DataSource = service.getCombosByIdCatalog(idCombo);
+            }
+        }
+
+        private void buttonSearchCatalog_Click(object sender, EventArgs e)
+        {
+            string searchValue = textBoxSearchCatalog.Text;
+            if (searchValue.Equals(""))
+            {
+                bindingSourceCatalog.DataSource = service.getCatalogs();
+            }
+            else
+            {
+                bindingSourceCatalog.DataSource = service.getCatalogBySearchString(searchValue);
             }
         }
     }

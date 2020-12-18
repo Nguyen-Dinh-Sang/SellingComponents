@@ -127,5 +127,35 @@ namespace WindowsForms.Business.Service
         {
             classifyService.delete(id);
         }
+
+        public List<ComboDTO> getCombosByIdCatalog(int idCatalog)
+        {
+            return comboService.getCombosByIdCatalog(idCatalog);
+        }
+
+        public List<ComboDTO> getComboBySearchString(string searchValue)
+        {
+            return comboService.getComboBySearchString(searchValue);
+        }
+
+        public void createCombo(ComboDTO combo)
+        {
+            comboService.create(combo);
+        }
+
+        public void editCombo(ComboDTO combo)
+        {
+            comboService.edit(combo);
+        }
+
+        public void deleteCombo(int id)
+        {
+            comboService.delete(id);
+        }
+
+        public List<CatalogDTO> getCatalogBySearchString(string searchValue)
+        {
+            return catalogService.getCatalogBySearchString(searchValue);
+        }
     }
 }

@@ -51,5 +51,10 @@ namespace WindowsForms.Business.Service
         {
             catalogRepository.delete(id);
         }
+
+        public List<CatalogDTO> getCatalogBySearchString(string searchValue)
+        {
+            return new List<CatalogDTO>(mapper.Map<IEnumerable<Catalog>, IEnumerable<CatalogDTO>>(catalogRepository.getCatalogBySearchString(searchValue)));
+        }
     }
 }
