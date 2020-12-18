@@ -52,5 +52,25 @@ namespace WindowsForms.Business.Service
         {
             productRepository.delete(id);
         }
+
+        public List<ProductDTO> getProductsByIdCatalog(int idCatalog)
+        {
+            return new List<ProductDTO>(mapper.Map<IEnumerable<Product>, IEnumerable<ProductDTO>>(productRepository.getProductsByIdCatalog(idCatalog)));
+        }
+
+        public List<ProductDTO> getProductBySearchString(string searchValue)
+        {
+            return new List<ProductDTO>(mapper.Map<IEnumerable<Product>, IEnumerable<ProductDTO>>(productRepository.getProductBySearchString(searchValue)));
+        }
+       
+        public List<ProductDTO> getProductByIdCombo(int idCombo)
+        {
+            return new List<ProductDTO>(mapper.Map<IEnumerable<Product>, IEnumerable<ProductDTO>>(productRepository.getProductByIdCombo(idCombo)));
+        }
+
+        public List<ProductDTO> getProductByIdClassify(int idClassify)
+        {
+            return new List<ProductDTO>(mapper.Map<IEnumerable<Product>, IEnumerable<ProductDTO>>(productRepository.getProductByIdClassify(idClassify)));
+        }
     }
 }

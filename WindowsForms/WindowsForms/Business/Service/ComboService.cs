@@ -11,7 +11,7 @@ namespace WindowsForms.Business.Service
 {
     public class ComboService
     {
-        private ComboRepository ComboRepository = ComboRepository.getInstance();
+        private ComboRepository comboRepository = ComboRepository.getInstance();
 
         private static ComboService instance;
 
@@ -34,7 +34,37 @@ namespace WindowsForms.Business.Service
 
         public List<ComboDTO> getCombos()
         {
-            return new List<ComboDTO>(mapper.Map<IEnumerable<Combo>, IEnumerable<ComboDTO>>(ComboRepository.getCombos()));
+            return new List<ComboDTO>(mapper.Map<IEnumerable<Combo>, IEnumerable<ComboDTO>>(comboRepository.getCombos()));
+        }
+
+        public ComboDTO getComboById(int id)
+        {
+            return mapper.Map<Combo, ComboDTO>(comboRepository.getComboById(id));
+        }
+
+        public List<ComboDTO> getCombosByIdCatalog(int idCatalog)
+        {
+            return new List<ComboDTO>(mapper.Map<IEnumerable<Combo>, IEnumerable<ComboDTO>>(comboRepository.getCombosByIdCatalog(idCatalog)));
+        }
+        
+        public List<ComboDTO> getComboBySearchString(string searchValue)
+        {
+            return new List<ComboDTO>(mapper.Map<IEnumerable<Combo>, IEnumerable<ComboDTO>>(comboRepository.getComboBySearchString(searchValue)));
+        }
+
+        public void create(ComboDTO combo)
+        {
+            comboRepository.create(mapper.Map<ComboDTO, Combo>(combo));
+        }
+
+        public void edit(ComboDTO combo)
+        {
+            comboRepository.edit(mapper.Map<ComboDTO, Combo>(combo));
+        }
+
+        public void delete(int id)
+        {
+            comboRepository.delete(id);
         }
     }
 }
