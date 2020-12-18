@@ -164,5 +164,10 @@ namespace WindowsForms.Business.Service
         {
             return wareHoureService.getWareHouses();
         }
+
+        public WareHouseDTO getWareHouseById(int id)
+        {
+            return wareHoureService.getWareHouseById(id);
+        }
     }
 }

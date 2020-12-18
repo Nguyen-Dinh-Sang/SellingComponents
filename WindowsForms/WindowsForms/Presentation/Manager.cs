@@ -473,5 +473,27 @@ namespace WindowsForms.Presentation
         {
 
         }
+
+        private void textBoxIdWareHouse_TextChanged(object sender, EventArgs e)
+        {
+            if (!textBoxIdWareHouse.Text.Equals("0") && !textBoxIdWareHouse.Text.Equals(""))
+            {
+                int idWareHouse = Convert.ToInt32(textBoxIdWareHouse.Text);
+                WareHouseDTO wareHouseDTO = service.getWareHouseById(idWareHouse);
+                
+                int index = -1;
+                int i = 0;
+                foreach (ProductDTO item in comboBoxProductWareHouse.Items)
+                {
+                    if (item.Id == wareHouseDTO.IdProduct)
+                    {
+                        index = i;
+                        break;
+                    }
+                    i++;
+                }
+                comboBoxProductWareHouse.SelectedIndex = index;
+            }
+        }
     }
 }

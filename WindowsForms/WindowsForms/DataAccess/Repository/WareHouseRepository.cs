@@ -30,5 +30,10 @@ namespace WindowsForms.DataAccess.Repository
         {
             return sellingComponentsDBContext.Warehouses;
         }
+
+        public Warehouse getWareHouseById(int id)
+        {
+            return sellingComponentsDBContext.Warehouses.Find(id);
+        }
     }
 }

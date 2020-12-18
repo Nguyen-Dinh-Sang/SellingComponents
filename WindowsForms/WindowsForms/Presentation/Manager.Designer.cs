@@ -419,6 +419,7 @@ namespace WindowsForms.Presentation
             this.textBoxIdWareHouse.Name = "textBoxIdWareHouse";
             this.textBoxIdWareHouse.Size = new System.Drawing.Size(314, 26);
             this.textBoxIdWareHouse.TabIndex = 1;
+            this.textBoxIdWareHouse.TextChanged += new System.EventHandler(this.textBoxIdWareHouse_TextChanged);
             // 
             // label27
             // 
