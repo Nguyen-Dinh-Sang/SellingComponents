@@ -45,5 +45,15 @@ namespace WindowsForms.DataAccess.Repository
 
             return query;
         }
+
+        public IEnumerable<Combo> getComboBySearchString(string searchValue)
+        {
+            var query = (from c in sellingComponentsDBContext.Combos
+                         where c.ComboName.Contains(searchValue) || c.ComboDetails.Contains(searchValue)
+                         select c);
+
+            return query;
+        }
+
     }
 }

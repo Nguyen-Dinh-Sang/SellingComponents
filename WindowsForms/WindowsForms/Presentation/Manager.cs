@@ -260,7 +260,15 @@ namespace WindowsForms.Presentation
 
         private void buttonSearchCombo_Click(object sender, EventArgs e)
         {
-
+            string searchValue = textBoxSearchCombo.Text;
+            if (searchValue.Equals(""))
+            {
+                bindingSourceCombo.DataSource = service.getCombos();
+            }
+            else
+            {
+                bindingSourceCombo.DataSource = service.getComboBySearchString(searchValue);
+            }
         }
 
         private void comboBoxComboCatalog_SelectedIndexChanged(object sender, EventArgs e)

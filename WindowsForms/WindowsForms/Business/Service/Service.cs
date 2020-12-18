@@ -132,5 +132,10 @@ namespace WindowsForms.Business.Service
         {
             return comboService.getCombosByIdCatalog(idCatalog);
         }
+
+        public List<ComboDTO> getComboBySearchString(string searchValue)
+        {
+            return comboService.getComboBySearchString(searchValue);
+        }
     }
 }
