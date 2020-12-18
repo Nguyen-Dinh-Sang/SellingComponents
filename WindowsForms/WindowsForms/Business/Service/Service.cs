@@ -137,5 +137,20 @@ namespace WindowsForms.Business.Service
         {
             return comboService.getComboBySearchString(searchValue);
         }
+
+        public void createCombo(ComboDTO combo)
+        {
+            comboService.create(combo);
+        }
+
+        public void editCombo(ComboDTO combo)
+        {
+            comboService.edit(combo);
+        }
+
+        public void deleteCombo(int id)
+        {
+            comboService.delete(id);
+        }
     }
 }

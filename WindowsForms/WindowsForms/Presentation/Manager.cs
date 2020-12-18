@@ -386,5 +386,46 @@ namespace WindowsForms.Presentation
             int idCatalog = (comboBoxCatalogCombo.SelectedItem as CatalogDTO).Id;
             bindingSourceCombo.DataSource = service.getCombosByIdCatalog(idCatalog);
         }
+
+        private void buttonAddCombo_Click(object sender, EventArgs e)
+        {
+            string comboName = textBoxComboName.Text;
+            decimal price = Convert.ToDecimal(textBoxPriceCombo.Text);
+            string detail = textBoxComboDetail.Text;
+            int idCatalog = (comboBoxComboCatalog.SelectedItem as CatalogDTO).Id;
+
+            ComboDTO combo = new ComboDTO();
+            combo.ComboName = comboName;
+            combo.ComboDetails = detail;
+            combo.Price = price;
+            combo.IdCatalog = idCatalog;
+            service.createCombo(combo);
+            loadCombo();
+        }
+
+        private void buttonRemoveCombo_Click(object sender, EventArgs e)
+        {
+            int idCombo = Convert.ToInt32(textBoxIdCombo.Text);
+            service.deleteCombo(idCombo);
+            loadCombo();
+        }
+
+        private void buttonUpdateCombo_Click(object sender, EventArgs e)
+        {
+            int idCombo = Convert.ToInt32(textBoxIdCombo.Text);
+            string comboName = textBoxComboName.Text;
+            decimal price = Convert.ToDecimal(textBoxPriceCombo.Text);
+            string detail = textBoxComboDetail.Text;
+            int idCatalog = (comboBoxComboCatalog.SelectedItem as CatalogDTO).Id;
+
+            ComboDTO combo = new ComboDTO();
+            combo.Id = idCombo;
+            combo.ComboName = comboName;
+            combo.ComboDetails = detail;
+            combo.Price = price;
+            combo.IdCatalog = idCatalog;
+            service.editCombo(combo);
+            loadCombo();
+        }
     }
 }

@@ -51,5 +51,20 @@ namespace WindowsForms.Business.Service
         {
             return new List<ComboDTO>(mapper.Map<IEnumerable<Combo>, IEnumerable<ComboDTO>>(comboRepository.getComboBySearchString(searchValue)));
         }
+
+        public void create(ComboDTO combo)
+        {
+            comboRepository.create(mapper.Map<ComboDTO, Combo>(combo));
+        }
+
+        public void edit(ComboDTO combo)
+        {
+            comboRepository.edit(mapper.Map<ComboDTO, Combo>(combo));
+        }
+
+        public void delete(int id)
+        {
+            comboRepository.delete(id);
+        }
     }
 }

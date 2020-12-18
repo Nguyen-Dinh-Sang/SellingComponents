@@ -779,6 +779,7 @@ namespace WindowsForms.Presentation
             this.buttonUpdateCombo.TabIndex = 2;
             this.buttonUpdateCombo.Text = "Sửa";
             this.buttonUpdateCombo.UseVisualStyleBackColor = true;
+            this.buttonUpdateCombo.Click += new System.EventHandler(this.buttonUpdateCombo_Click);
             // 
             // buttonRemoveCombo
             // 
@@ -788,6 +789,7 @@ namespace WindowsForms.Presentation
             this.buttonRemoveCombo.TabIndex = 1;
             this.buttonRemoveCombo.Text = "Xóa";
             this.buttonRemoveCombo.UseVisualStyleBackColor = true;
+            this.buttonRemoveCombo.Click += new System.EventHandler(this.buttonRemoveCombo_Click);
             // 
             // buttonAddCombo
             // 
@@ -797,6 +799,7 @@ namespace WindowsForms.Presentation
             this.buttonAddCombo.TabIndex = 0;
             this.buttonAddCombo.Text = "Thêm";
             this.buttonAddCombo.UseVisualStyleBackColor = true;
+            this.buttonAddCombo.Click += new System.EventHandler(this.buttonAddCombo_Click);
             // 
             // panel19
             // 

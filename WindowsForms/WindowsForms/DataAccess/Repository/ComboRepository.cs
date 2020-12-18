@@ -55,5 +55,28 @@ namespace WindowsForms.DataAccess.Repository
             return query;
         }
 
+
+        public void create(Combo combo)
+        {
+            sellingComponentsDBContext.Add(combo);
+            sellingComponentsDBContext.SaveChanges();
+        }
+
+        public void edit(Combo combo)
+        {
+            var cb = sellingComponentsDBContext.Combos.Find(combo.Id);
+            cb.ComboName = combo.ComboName;
+            cb.ComboDetails = combo.ComboDetails;
+            cb.TotalCost = combo.TotalCost;
+            cb.IdCatalog = combo.IdCatalog;
+            sellingComponentsDBContext.SaveChanges();
+        }
+
+        public void delete(int id)
+        {
+            var combo = sellingComponentsDBContext.Combos.Find(id);
+            sellingComponentsDBContext.Combos.Remove(combo);
+            sellingComponentsDBContext.SaveChanges();
+        }
     }
 }
