@@ -39,16 +39,35 @@ namespace WindowsForms.DataAccess.Repository
 
         public IEnumerable<Warehouse> getWareHouseBySearchString(string searchValue)
         {
-            /*if (Convert.ToInt32(searchValue))
+            int id = -1;
+            if (Int32.TryParse(searchValue, out id))
             {
-                int value = Convert.ToInt32(searchValue);
                 var query = (from wh in sellingComponentsDBContext.Warehouses
-                             where wh.IdProduct ==  || c.CatalogDetails.Contains(searchValue)
-                             select c);
+                             where wh.IdProduct == id || wh.Amount == id
+                             select wh);
 
                 return query;
-            }*/
-            return null;
+            } else
+            {
+                var queryProduct = (from p in sellingComponentsDBContext.Products
+                                    where p.ProductName.Contains(searchValue)
+                                    select p);
+
+                var queryWareHouseByProductName = (from wh in sellingComponentsDBContext.Warehouses
+                                                   where (from p in queryProduct
+                                                          select p.Id).Contains(wh.IdProduct)
+                                                    select wh);
+
+                return queryWareHouseByProductName;
+            }
+        }
+
+        public void create(Warehouse warehouse)
+        {
+            sellingComponentsDBContext.Add(warehouse);
+            var pd = sellingComponentsDBContext.Products.Find(warehouse.IdProduct);
+            pd.Amount += warehouse.Amount;
+            sellingComponentsDBContext.SaveChanges();
         }
     }
 }
