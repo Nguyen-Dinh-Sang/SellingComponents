@@ -521,7 +521,7 @@ namespace WindowsForms.Presentation
         private void buttonDetailCombo_Click(object sender, EventArgs e)
         {
             int idCombo = Convert.ToInt32(textBoxIdCombo.Text);
-            ComboDetail comboDetail = new ComboDetail(idCombo);
+            ComboDetails comboDetail = new ComboDetails(idCombo);
             comboDetail.ShowDialog();
         }
 
