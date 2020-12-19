@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using WindowsForms.Business.DTO;
 using WindowsForms.Business.Service;
+using WindowsForms.DataAccess.Entity;
 
 namespace WindowsForms.Presentation
 {
@@ -24,6 +25,7 @@ namespace WindowsForms.Presentation
         private BindingSource bindingSourceComboProduct = new BindingSource();
         private BindingSource bindingSourceComboCatalog = new BindingSource();
         private BindingSource bindingSourceWareHouse = new BindingSource();
+        private BindingSource bindingSourceThongKe = new BindingSource();
 
         public Manager(String username)
         {
@@ -42,6 +44,7 @@ namespace WindowsForms.Presentation
             dataGridViewProductComBo.DataSource = bindingSourceComboProduct;
             dataGridViewDetailCatalog.DataSource = bindingSourceComboCatalog;
             dataGridViewWareHose.DataSource = bindingSourceWareHouse;
+            dataGridViewOrder.DataSource = bindingSourceThongKe;
             loadProduct();
             addProductBinding();
             loadClassifies();
@@ -52,6 +55,17 @@ namespace WindowsForms.Presentation
             addClassifyBinding();
             loadWareHouse();
             addWareHouseBinding();
+            loadThongKe();
+        }
+        private void loadThongKe()
+        {
+            bindingSourceThongKe.DataSource = service.getThongKe(dateTimePickerFrom.Value, dateTimePickerTo.Value);
+            decimal tongTien = 0;
+            foreach (ThongKe item in service.getThongKe(dateTimePickerFrom.Value, dateTimePickerTo.Value))
+            {
+                tongTien += item.TotalCost;
+            }
+            textBoxTongTien.Text = tongTien + "";
         }
         private void loadWareHouse()
         {
@@ -521,6 +535,19 @@ namespace WindowsForms.Presentation
             wareHouseDTO.Amount = amount;
             service.addWareHouse(wareHouseDTO);
             loadWareHouse();
+        }
+
+        private void buttonThongKe_Click(object sender, EventArgs e)
+        {
+            loadThongKe();
+        }
+
+        private void dataGridViewOrder_SelectionChanged(object sender, EventArgs e)
+        {
+            int r = dataGridViewProduct.CurrentCell.RowIndex + 1;
+            DataRowView rowView = (DataRowView)dataGridViewOrder.Rows[r].DataBoundItem;
+            int id = Convert.ToInt32(rowView["Id"]);
+            Debug.WriteLine("Select: " + id);
         }
     }
 }
