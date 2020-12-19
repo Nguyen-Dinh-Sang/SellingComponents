@@ -18,7 +18,7 @@ namespace WindowsForms
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Manager("ok"));
+            Application.Run(new Login());
         }
     }
 }

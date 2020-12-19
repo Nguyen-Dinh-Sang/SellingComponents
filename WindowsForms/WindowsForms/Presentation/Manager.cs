@@ -172,6 +172,7 @@ namespace WindowsForms.Presentation
             string searchValue = textBoxSearch.Text;
             if (searchValue.Equals(""))
             {
+                bindingSourceProduct.Clear();
                 bindingSourceProduct.DataSource = productService.getProducts();
             } else
             {
@@ -544,10 +545,10 @@ namespace WindowsForms.Presentation
 
         private void dataGridViewOrder_SelectionChanged(object sender, EventArgs e)
         {
-            int r = dataGridViewProduct.CurrentCell.RowIndex + 1;
+            /*int r = dataGridViewProduct.CurrentCell.RowIndex + 1;
             DataRowView rowView = (DataRowView)dataGridViewOrder.Rows[r].DataBoundItem;
             int id = Convert.ToInt32(rowView["Id"]);
-            Debug.WriteLine("Select: " + id);
+            Debug.WriteLine("Select: " + id);*/
         }
     }
 }

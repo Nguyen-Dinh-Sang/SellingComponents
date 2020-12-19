@@ -30,7 +30,7 @@ namespace WindowsForms.DataAccess.Repository
 
         public IEnumerable<Product> getProducts()
         {
-            return sellingComponentsDBContext.Products.Include(p => p.IdClassifyNavigation);
+            return sellingComponentsDBContext.Products;
         }
         public IEnumerable<Product> getProductNotInCombo(int idCombo)
         {
