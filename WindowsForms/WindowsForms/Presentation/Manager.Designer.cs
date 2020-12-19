@@ -178,6 +178,17 @@ namespace WindowsForms.Presentation
             this.comboBoxComBo = new System.Windows.Forms.ComboBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.tabControlManager = new System.Windows.Forms.TabControl();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.panel52 = new System.Windows.Forms.Panel();
+            this.textBoxTongTien = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.panel43 = new System.Windows.Forms.Panel();
+            this.dataGridViewOrderDetail = new System.Windows.Forms.DataGridView();
+            this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
+            this.panel63 = new System.Windows.Forms.Panel();
+            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
+            this.buttonThongKe = new System.Windows.Forms.Button();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewWareHose)).BeginInit();
             this.panel44.SuspendLayout();
@@ -241,6 +252,12 @@ namespace WindowsForms.Presentation
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControlManager.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.panel52.SuspendLayout();
+            this.panel43.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
+            this.panel63.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage7
@@ -258,7 +275,7 @@ namespace WindowsForms.Presentation
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(937, 597);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Quản Lý";
+            this.tabPage6.Text = "Quản Lý Tài Khoản";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // tabPage5
@@ -1645,6 +1662,7 @@ namespace WindowsForms.Presentation
             this.tabControlManager.Controls.Add(this.tabPage3);
             this.tabControlManager.Controls.Add(this.tabPage4);
             this.tabControlManager.Controls.Add(this.tabPage5);
+            this.tabControlManager.Controls.Add(this.tabPage8);
             this.tabControlManager.Controls.Add(this.tabPage6);
             this.tabControlManager.Controls.Add(this.tabPage7);
             this.tabControlManager.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -1654,11 +1672,118 @@ namespace WindowsForms.Presentation
             this.tabControlManager.Size = new System.Drawing.Size(945, 629);
             this.tabControlManager.TabIndex = 0;
             // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.panel52);
+            this.tabPage8.Controls.Add(this.panel43);
+            this.tabPage8.Controls.Add(this.dataGridViewOrder);
+            this.tabPage8.Controls.Add(this.panel63);
+            this.tabPage8.Location = new System.Drawing.Point(4, 28);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(937, 597);
+            this.tabPage8.TabIndex = 8;
+            this.tabPage8.Text = "Thống Kê";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // panel52
+            // 
+            this.panel52.Controls.Add(this.textBoxTongTien);
+            this.panel52.Controls.Add(this.label28);
+            this.panel52.Location = new System.Drawing.Point(36, 357);
+            this.panel52.Name = "panel52";
+            this.panel52.Size = new System.Drawing.Size(865, 42);
+            this.panel52.TabIndex = 16;
+            // 
+            // textBoxTongTien
+            // 
+            this.textBoxTongTien.Location = new System.Drawing.Point(123, 8);
+            this.textBoxTongTien.Name = "textBoxTongTien";
+            this.textBoxTongTien.Size = new System.Drawing.Size(742, 26);
+            this.textBoxTongTien.TabIndex = 1;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(0, 11);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(92, 19);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Tổng Tiền:";
+            // 
+            // panel43
+            // 
+            this.panel43.Controls.Add(this.dataGridViewOrderDetail);
+            this.panel43.Location = new System.Drawing.Point(0, 405);
+            this.panel43.Name = "panel43";
+            this.panel43.Size = new System.Drawing.Size(937, 192);
+            this.panel43.TabIndex = 15;
+            // 
+            // dataGridViewOrderDetail
+            // 
+            this.dataGridViewOrderDetail.AllowUserToAddRows = false;
+            this.dataGridViewOrderDetail.AllowUserToDeleteRows = false;
+            this.dataGridViewOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrderDetail.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewOrderDetail.Name = "dataGridViewOrderDetail";
+            this.dataGridViewOrderDetail.ReadOnly = true;
+            this.dataGridViewOrderDetail.RowTemplate.Height = 25;
+            this.dataGridViewOrderDetail.Size = new System.Drawing.Size(937, 192);
+            this.dataGridViewOrderDetail.TabIndex = 0;
+            // 
+            // dataGridViewOrder
+            // 
+            this.dataGridViewOrder.AllowUserToAddRows = false;
+            this.dataGridViewOrder.AllowUserToDeleteRows = false;
+            this.dataGridViewOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOrder.Location = new System.Drawing.Point(0, 108);
+            this.dataGridViewOrder.Name = "dataGridViewOrder";
+            this.dataGridViewOrder.ReadOnly = true;
+            this.dataGridViewOrder.RowTemplate.Height = 25;
+            this.dataGridViewOrder.Size = new System.Drawing.Size(937, 243);
+            this.dataGridViewOrder.TabIndex = 14;
+            this.dataGridViewOrder.SelectionChanged += new System.EventHandler(this.dataGridViewOrder_SelectionChanged);
+            // 
+            // panel63
+            // 
+            this.panel63.Controls.Add(this.dateTimePickerTo);
+            this.panel63.Controls.Add(this.dateTimePickerFrom);
+            this.panel63.Controls.Add(this.buttonThongKe);
+            this.panel63.Location = new System.Drawing.Point(0, 36);
+            this.panel63.Name = "panel63";
+            this.panel63.Size = new System.Drawing.Size(937, 37);
+            this.panel63.TabIndex = 11;
+            // 
+            // dateTimePickerTo
+            // 
+            this.dateTimePickerTo.Location = new System.Drawing.Point(535, 6);
+            this.dateTimePickerTo.Name = "dateTimePickerTo";
+            this.dateTimePickerTo.Size = new System.Drawing.Size(366, 26);
+            this.dateTimePickerTo.TabIndex = 17;
+            // 
+            // dateTimePickerFrom
+            // 
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(36, 6);
+            this.dateTimePickerFrom.Name = "dateTimePickerFrom";
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(357, 26);
+            this.dateTimePickerFrom.TabIndex = 17;
+            // 
+            // buttonThongKe
+            // 
+            this.buttonThongKe.Location = new System.Drawing.Point(415, 0);
+            this.buttonThongKe.Name = "buttonThongKe";
+            this.buttonThongKe.Size = new System.Drawing.Size(100, 36);
+            this.buttonThongKe.TabIndex = 1;
+            this.buttonThongKe.Text = "Thống Kê";
+            this.buttonThongKe.UseVisualStyleBackColor = true;
+            this.buttonThongKe.Click += new System.EventHandler(this.buttonThongKe_Click);
+            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 633);
+            this.ClientSize = new System.Drawing.Size(952, 633);
             this.Controls.Add(this.tabControlManager);
             this.Name = "Manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1758,6 +1883,13 @@ namespace WindowsForms.Presentation
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControlManager.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            this.panel52.ResumeLayout(false);
+            this.panel52.PerformLayout();
+            this.panel43.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
+            this.panel63.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1913,5 +2045,16 @@ namespace WindowsForms.Presentation
         private System.Windows.Forms.Button buttonSearchWareHouse;
         private System.Windows.Forms.ComboBox comboBoxProductWareHouse;
         private System.Windows.Forms.NumericUpDown numericUpDownAmountWareHouse;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Panel panel43;
+        private System.Windows.Forms.DataGridView dataGridViewOrderDetail;
+        private System.Windows.Forms.DataGridView dataGridViewOrder;
+        private System.Windows.Forms.Panel panel63;
+        private System.Windows.Forms.Button buttonThongKe;
+        private System.Windows.Forms.Panel panel52;
+        private System.Windows.Forms.TextBox textBoxTongTien;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTo;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
     }
 }

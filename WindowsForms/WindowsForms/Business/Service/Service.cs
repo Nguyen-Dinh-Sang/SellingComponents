@@ -18,6 +18,8 @@ namespace WindowsForms.Business.Service
 
         private WareHoureService wareHoureService = WareHoureService.getInstance();
 
+        private ThongKeService thongKeService = ThongKeService.getInstance();
+
         private static Service instance;
 
         private Service()
@@ -178,6 +180,10 @@ namespace WindowsForms.Business.Service
         public void addWareHouse(WareHouseDTO wareHouse)
         {
             wareHoureService.create(wareHouse);
+        }
+
+        public List<ThongKe> getThongKe(DateTime tu, DateTime den) {
+            return thongKeService.GetThongKes(tu, den);
         }
     }
 }
