@@ -18,6 +18,7 @@ namespace WindowsForms.Business.Service
 
         private WareHoureService wareHoureService = WareHoureService.getInstance();
 
+        private ComboDetailService comboDetailService = ComboDetailService.getInstance();
         private static Service instance;
 
         private Service()
@@ -54,7 +55,11 @@ namespace WindowsForms.Business.Service
         {
             productService.create(product);
         }
-
+        
+        public void createaComboDetail(ComboDetailDTO comboDetailDTO)
+        {
+            comboDetailService.create(comboDetailDTO);
+        }
         public void editProduct(ProductDTO product)
         {
             productService.edit(product);

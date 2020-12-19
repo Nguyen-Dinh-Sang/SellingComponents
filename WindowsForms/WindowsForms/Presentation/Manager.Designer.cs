@@ -282,7 +282,6 @@ namespace WindowsForms.Presentation
             this.dataGridViewWareHose.Location = new System.Drawing.Point(0, 108);
             this.dataGridViewWareHose.Name = "dataGridViewWareHose";
             this.dataGridViewWareHose.ReadOnly = true;
-            this.dataGridViewWareHose.RowTemplate.Height = 25;
             this.dataGridViewWareHose.Size = new System.Drawing.Size(486, 488);
             this.dataGridViewWareHose.TabIndex = 10;
             // 
@@ -486,7 +485,6 @@ namespace WindowsForms.Presentation
             this.dataGridViewDetailCatalog.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewDetailCatalog.Name = "dataGridViewDetailCatalog";
             this.dataGridViewDetailCatalog.ReadOnly = true;
-            this.dataGridViewDetailCatalog.RowTemplate.Height = 25;
             this.dataGridViewDetailCatalog.Size = new System.Drawing.Size(450, 247);
             this.dataGridViewDetailCatalog.TabIndex = 0;
             // 
@@ -499,7 +497,6 @@ namespace WindowsForms.Presentation
             this.dataGridViewCatalog.Location = new System.Drawing.Point(0, 108);
             this.dataGridViewCatalog.Name = "dataGridViewCatalog";
             this.dataGridViewCatalog.ReadOnly = true;
-            this.dataGridViewCatalog.RowTemplate.Height = 25;
             this.dataGridViewCatalog.Size = new System.Drawing.Size(486, 488);
             this.dataGridViewCatalog.TabIndex = 6;
             // 
@@ -728,7 +725,6 @@ namespace WindowsForms.Presentation
             this.dataGridViewProductComBo.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewProductComBo.Name = "dataGridViewProductComBo";
             this.dataGridViewProductComBo.ReadOnly = true;
-            this.dataGridViewProductComBo.RowTemplate.Height = 25;
             this.dataGridViewProductComBo.Size = new System.Drawing.Size(450, 127);
             this.dataGridViewProductComBo.TabIndex = 0;
             // 
@@ -741,7 +737,6 @@ namespace WindowsForms.Presentation
             this.dataGridViewCombo.Location = new System.Drawing.Point(0, 108);
             this.dataGridViewCombo.Name = "dataGridViewCombo";
             this.dataGridViewCombo.ReadOnly = true;
-            this.dataGridViewCombo.RowTemplate.Height = 25;
             this.dataGridViewCombo.Size = new System.Drawing.Size(486, 488);
             this.dataGridViewCombo.TabIndex = 9;
             // 
@@ -1090,7 +1085,6 @@ namespace WindowsForms.Presentation
             this.dataGridViewClassifyProduct.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewClassifyProduct.Name = "dataGridViewClassifyProduct";
             this.dataGridViewClassifyProduct.ReadOnly = true;
-            this.dataGridViewClassifyProduct.RowTemplate.Height = 25;
             this.dataGridViewClassifyProduct.Size = new System.Drawing.Size(450, 247);
             this.dataGridViewClassifyProduct.TabIndex = 0;
             // 
@@ -1103,7 +1097,6 @@ namespace WindowsForms.Presentation
             this.dataGridViewClassify.Location = new System.Drawing.Point(0, 108);
             this.dataGridViewClassify.Name = "dataGridViewClassify";
             this.dataGridViewClassify.ReadOnly = true;
-            this.dataGridViewClassify.RowTemplate.Height = 25;
             this.dataGridViewClassify.Size = new System.Drawing.Size(486, 488);
             this.dataGridViewClassify.TabIndex = 10;
             // 
@@ -1562,7 +1555,6 @@ namespace WindowsForms.Presentation
             this.dataGridViewProduct.Location = new System.Drawing.Point(0, 1);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.ReadOnly = true;
-            this.dataGridViewProduct.RowTemplate.Height = 25;
             this.dataGridViewProduct.Size = new System.Drawing.Size(486, 488);
             this.dataGridViewProduct.TabIndex = 0;
             this.dataGridViewProduct.SelectionChanged += new System.EventHandler(this.dataGridViewProduct_SelectionChanged);

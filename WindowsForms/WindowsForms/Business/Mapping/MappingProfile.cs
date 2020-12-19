@@ -23,6 +23,9 @@ namespace Business.Mapping
             CreateMap<ComboDTO, Combo>();
             CreateMap<Combo, ComboDTO>();
 
+            CreateMap<ComboDetailDTO, ComboDetail>();
+            CreateMap<ComboDetail, ComboDetailDTO>();
+
             CreateMap<WareHouseDTO, Warehouse>();
             CreateMap<Warehouse, WareHouseDTO>();
         }

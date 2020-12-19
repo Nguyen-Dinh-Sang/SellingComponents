@@ -32,7 +32,21 @@ namespace WindowsForms.DataAccess.Repository
         {
             return sellingComponentsDBContext.Products.Include(p => p.IdClassifyNavigation);
         }
+        public IEnumerable<Product> getProductNotInCombo(int idCombo)
+        {
+            var queryComboDetail = (from cbd in sellingComponentsDBContext.ComboDetails
+                                    where cbd.IdCombo == idCombo
+                                    select cbd);
 
+            var queryProduct = (from cbd in queryComboDetail
+                                join p in sellingComponentsDBContext.Products on cbd.IdProduct equals p.Id
+                                select p);
+            var query = from p in sellingComponentsDBContext.Products
+                        where !((from cb in queryProduct
+                                select cb.Id).Contains(p.Id))
+                                select p;
+            return query;
+        }               
         public void create(Product product)
         {
             sellingComponentsDBContext.Add(product);
